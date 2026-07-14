@@ -1,0 +1,369 @@
+DIGEST 137a84c270deac87962f53cc5158cf81
+FKernelCert.NTK.Core
+R27:31 Stdlib.Reals.Reals <> <> lib
+R33:36 Stdlib.Lists.List <> <> lib
+R38:42 Stdlib.micromega.Psatz <> <> lib
+R44:47 Stdlib.setoid_ring.Ring <> <> lib
+R57:69 Stdlib.Lists.List ListNotations <> mod
+def 343:346 <> vec2
+R353:355 Corelib.Init.Datatypes <> ::type_scope:x_'*'_x not
+R352:352 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R356:356 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+def 377:381 <> vzero
+R385:388 KernelCert.NTK.Core <> vec2 def
+R393:393 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R395:396 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R398:398 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+def 413:416 <> vadd
+R425:428 KernelCert.NTK.Core <> vec2 def
+binder 419:419 <> u:1
+binder 421:421 <> v:2
+R433:436 KernelCert.NTK.Core <> vec2 def
+R443:443 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R457:458 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R472:472 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R449:451 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R444:446 Corelib.Init.Datatypes <> fst def
+R448:448 KernelCert.NTK.Core <> u:1 var
+R452:454 Corelib.Init.Datatypes <> fst def
+R456:456 KernelCert.NTK.Core <> v:2 var
+R464:466 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R459:461 Corelib.Init.Datatypes <> snd def
+R463:463 KernelCert.NTK.Core <> u:1 var
+R467:469 Corelib.Init.Datatypes <> snd def
+R471:471 KernelCert.NTK.Core <> v:2 var
+def 487:490 <> smul
+R497:497 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 493:493 <> a:3
+R505:508 KernelCert.NTK.Core <> vec2 def
+binder 501:501 <> u:4
+R513:516 KernelCert.NTK.Core <> vec2 def
+R523:523 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R533:534 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R544:544 Corelib.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R525:527 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R524:524 KernelCert.NTK.Core <> a:3 var
+R528:530 Corelib.Init.Datatypes <> fst def
+R532:532 KernelCert.NTK.Core <> u:4 var
+R536:538 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R535:535 KernelCert.NTK.Core <> a:3 var
+R539:541 Corelib.Init.Datatypes <> snd def
+R543:543 KernelCert.NTK.Core <> u:4 var
+def 559:561 <> dot
+R570:573 KernelCert.NTK.Core <> vec2 def
+binder 564:564 <> u:5
+binder 566:566 <> v:6
+R578:578 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R598:600 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R590:592 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R585:587 Corelib.Init.Datatypes <> fst def
+R589:589 KernelCert.NTK.Core <> u:5 var
+R593:595 Corelib.Init.Datatypes <> fst def
+R597:597 KernelCert.NTK.Core <> v:6 var
+R606:608 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R601:603 Corelib.Init.Datatypes <> snd def
+R605:605 KernelCert.NTK.Core <> u:5 var
+R609:611 Corelib.Init.Datatypes <> snd def
+R613:613 KernelCert.NTK.Core <> v:6 var
+def 628:636 <> kernel_of
+R646:649 Corelib.Init.Notations <> ::type_scope:x_'->'_x not
+R645:645 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R650:653 KernelCert.NTK.Core <> vec2 def
+binder 639:641 <> phi:7
+R663:663 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 657:657 <> x:8
+binder 659:659 <> y:9
+R668:668 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R675:677 KernelCert.NTK.Core <> dot def
+R680:682 KernelCert.NTK.Core <> phi:7 var
+R684:684 KernelCert.NTK.Core <> x:8 var
+R688:690 KernelCert.NTK.Core <> phi:7 var
+R692:692 KernelCert.NTK.Core <> y:9 var
+def 706:716 <> feature_sum
+R726:729 Corelib.Init.Notations <> ::type_scope:x_'->'_x not
+R725:725 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R730:733 KernelCert.NTK.Core <> vec2 def
+binder 719:721 <> phi:10
+R745:748 Corelib.Init.Datatypes <> list ind
+R750:750 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 737:738 <> xs:11
+binder 740:741 <> cs:12
+R755:758 KernelCert.NTK.Core <> vec2 def
+R775:776 KernelCert.NTK.Core <> cs:12 var
+R771:772 KernelCert.NTK.Core <> xs:11 var
+R788:791 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R798:801 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R809:812 KernelCert.NTK.Core <> vadd def
+R815:818 KernelCert.NTK.Core <> smul def
+R823:825 KernelCert.NTK.Core <> phi:10 var
+R832:842 KernelCert.NTK.Core <> feature_sum:13 def
+R844:846 KernelCert.NTK.Core <> phi:10 var
+R869:873 KernelCert.NTK.Core <> vzero def
+def 892:905 <> kernel_row_sum
+R919:922 Corelib.Init.Notations <> ::type_scope:x_'->'_x not
+R918:918 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R923:926 KernelCert.NTK.Core <> vec2 def
+binder 912:914 <> phi:16
+R934:934 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 930:930 <> x:17
+R946:949 Corelib.Init.Datatypes <> list ind
+R951:951 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 938:939 <> ys:18
+binder 941:942 <> ds:19
+R956:956 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R973:974 KernelCert.NTK.Core <> ds:19 var
+R969:970 KernelCert.NTK.Core <> ys:18 var
+R986:989 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R996:999 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1028:1030 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R1008:1010 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R1011:1019 KernelCert.NTK.Core <> kernel_of def
+R1021:1023 KernelCert.NTK.Core <> phi:16 var
+R1025:1025 KernelCert.NTK.Core <> x:17 var
+R1031:1044 KernelCert.NTK.Core <> kernel_row_sum:20 def
+R1050:1050 KernelCert.NTK.Core <> x:17 var
+R1046:1048 KernelCert.NTK.Core <> phi:16 var
+def 1091:1112 <> kernel_cross_quadratic
+R1126:1129 Corelib.Init.Notations <> ::type_scope:x_'->'_x not
+R1125:1125 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1130:1133 KernelCert.NTK.Core <> vec2 def
+binder 1119:1121 <> phi:23
+R1151:1154 Corelib.Init.Datatypes <> list ind
+R1156:1156 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1137:1138 <> ys:24
+binder 1140:1141 <> ds:25
+binder 1143:1144 <> xs:26
+binder 1146:1147 <> cs:27
+R1161:1161 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1178:1179 KernelCert.NTK.Core <> cs:27 var
+R1174:1175 KernelCert.NTK.Core <> xs:26 var
+R1191:1194 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1201:1204 Corelib.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1248:1256 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R1219:1221 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R1222:1235 KernelCert.NTK.Core <> kernel_row_sum def
+R1237:1239 KernelCert.NTK.Core <> phi:23 var
+R1243:1244 KernelCert.NTK.Core <> ys:24 var
+R1246:1247 KernelCert.NTK.Core <> ds:25 var
+R1257:1278 KernelCert.NTK.Core <> kernel_cross_quadratic:28 def
+R1287:1288 KernelCert.NTK.Core <> ds:25 var
+R1284:1285 KernelCert.NTK.Core <> ys:24 var
+R1280:1282 KernelCert.NTK.Core <> phi:23 var
+def 1331:1346 <> kernel_quadratic
+R1356:1359 Corelib.Init.Notations <> ::type_scope:x_'->'_x not
+R1355:1355 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1360:1363 KernelCert.NTK.Core <> vec2 def
+binder 1349:1351 <> phi:31
+R1375:1378 Corelib.Init.Datatypes <> list ind
+R1380:1380 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+binder 1367:1368 <> xs:32
+binder 1370:1371 <> cs:33
+R1385:1385 Stdlib.Reals.Rdefinitions RbaseSymbolsImpl R defax
+R1392:1413 KernelCert.NTK.Core <> kernel_cross_quadratic def
+R1415:1417 KernelCert.NTK.Core <> phi:31 var
+R1419:1420 KernelCert.NTK.Core <> xs:32 var
+R1422:1423 KernelCert.NTK.Core <> cs:33 var
+R1425:1426 KernelCert.NTK.Core <> xs:32 var
+R1428:1429 KernelCert.NTK.Core <> cs:33 var
+prf 1439:1446 <> dot_comm
+binder 1457:1457 <> u:34
+binder 1459:1459 <> v:35
+R1469:1471 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1462:1464 KernelCert.NTK.Core <> dot def
+R1466:1466 KernelCert.NTK.Core <> u:34 var
+R1468:1468 KernelCert.NTK.Core <> v:35 var
+R1472:1474 KernelCert.NTK.Core <> dot def
+R1476:1476 KernelCert.NTK.Core <> v:35 var
+R1478:1478 KernelCert.NTK.Core <> u:34 var
+R1523:1525 KernelCert.NTK.Core <> dot def
+prf 1553:1563 <> dot_vzero_l
+binder 1574:1574 <> u:36
+R1588:1590 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1577:1579 KernelCert.NTK.Core <> dot def
+R1581:1585 KernelCert.NTK.Core <> vzero def
+R1587:1587 KernelCert.NTK.Core <> u:36 var
+R1628:1630 KernelCert.NTK.Core <> dot def
+R1633:1637 KernelCert.NTK.Core <> vzero def
+prf 1665:1675 <> dot_vzero_r
+binder 1686:1686 <> u:37
+R1700:1702 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1689:1691 KernelCert.NTK.Core <> dot def
+R1693:1693 KernelCert.NTK.Core <> u:37 var
+R1695:1699 KernelCert.NTK.Core <> vzero def
+R1740:1742 KernelCert.NTK.Core <> dot def
+R1745:1749 KernelCert.NTK.Core <> vzero def
+prf 1777:1786 <> dot_vadd_l
+binder 1797:1797 <> u:38
+binder 1799:1799 <> v:39
+binder 1801:1801 <> w:40
+R1820:1822 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1804:1806 KernelCert.NTK.Core <> dot def
+R1809:1812 KernelCert.NTK.Core <> vadd def
+R1814:1814 KernelCert.NTK.Core <> u:38 var
+R1816:1816 KernelCert.NTK.Core <> v:39 var
+R1819:1819 KernelCert.NTK.Core <> w:40 var
+R1830:1832 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R1823:1825 KernelCert.NTK.Core <> dot def
+R1827:1827 KernelCert.NTK.Core <> u:38 var
+R1829:1829 KernelCert.NTK.Core <> w:40 var
+R1833:1835 KernelCert.NTK.Core <> dot def
+R1837:1837 KernelCert.NTK.Core <> v:39 var
+R1839:1839 KernelCert.NTK.Core <> w:40 var
+R1892:1894 KernelCert.NTK.Core <> dot def
+R1897:1900 KernelCert.NTK.Core <> vadd def
+prf 1928:1937 <> dot_vadd_r
+binder 1948:1948 <> u:41
+binder 1950:1950 <> v:42
+binder 1952:1952 <> w:43
+R1971:1973 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1955:1957 KernelCert.NTK.Core <> dot def
+R1959:1959 KernelCert.NTK.Core <> u:41 var
+R1962:1965 KernelCert.NTK.Core <> vadd def
+R1967:1967 KernelCert.NTK.Core <> v:42 var
+R1969:1969 KernelCert.NTK.Core <> w:43 var
+R1981:1983 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R1974:1976 KernelCert.NTK.Core <> dot def
+R1978:1978 KernelCert.NTK.Core <> u:41 var
+R1980:1980 KernelCert.NTK.Core <> v:42 var
+R1984:1986 KernelCert.NTK.Core <> dot def
+R1988:1988 KernelCert.NTK.Core <> u:41 var
+R1990:1990 KernelCert.NTK.Core <> w:43 var
+R2043:2045 KernelCert.NTK.Core <> dot def
+R2048:2051 KernelCert.NTK.Core <> vadd def
+prf 2079:2088 <> dot_smul_l
+binder 2099:2099 <> a:44
+binder 2101:2101 <> u:45
+binder 2103:2103 <> v:46
+R2122:2124 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2106:2108 KernelCert.NTK.Core <> dot def
+R2111:2114 KernelCert.NTK.Core <> smul def
+R2116:2116 KernelCert.NTK.Core <> a:44 var
+R2118:2118 KernelCert.NTK.Core <> u:45 var
+R2121:2121 KernelCert.NTK.Core <> v:46 var
+R2126:2128 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R2125:2125 KernelCert.NTK.Core <> a:44 var
+R2129:2131 KernelCert.NTK.Core <> dot def
+R2133:2133 KernelCert.NTK.Core <> u:45 var
+R2135:2135 KernelCert.NTK.Core <> v:46 var
+R2182:2184 KernelCert.NTK.Core <> dot def
+R2187:2190 KernelCert.NTK.Core <> smul def
+prf 2218:2227 <> dot_smul_r
+binder 2238:2238 <> a:47
+binder 2240:2240 <> u:48
+binder 2242:2242 <> v:49
+R2261:2263 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2245:2247 KernelCert.NTK.Core <> dot def
+R2249:2249 KernelCert.NTK.Core <> u:48 var
+R2252:2255 KernelCert.NTK.Core <> smul def
+R2257:2257 KernelCert.NTK.Core <> a:47 var
+R2259:2259 KernelCert.NTK.Core <> v:49 var
+R2265:2267 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R2264:2264 KernelCert.NTK.Core <> a:47 var
+R2268:2270 KernelCert.NTK.Core <> dot def
+R2272:2272 KernelCert.NTK.Core <> u:48 var
+R2274:2274 KernelCert.NTK.Core <> v:49 var
+R2321:2323 KernelCert.NTK.Core <> dot def
+R2326:2329 KernelCert.NTK.Core <> smul def
+prf 2357:2376 <> dot_self_nonnegative
+binder 2387:2387 <> u:50
+R2391:2394 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'<='_x not
+R2395:2397 KernelCert.NTK.Core <> dot def
+R2399:2399 KernelCert.NTK.Core <> u:50 var
+R2401:2401 KernelCert.NTK.Core <> u:50 var
+R2438:2440 KernelCert.NTK.Core <> dot def
+prf 2469:2487 <> kernel_of_symmetric
+binder 2500:2502 <> phi:51
+binder 2504:2504 <> x:52
+binder 2506:2506 <> y:53
+R2530:2532 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2513:2521 KernelCert.NTK.Core <> kernel_of def
+R2523:2525 KernelCert.NTK.Core <> phi:51 var
+R2527:2527 KernelCert.NTK.Core <> x:52 var
+R2529:2529 KernelCert.NTK.Core <> y:53 var
+R2533:2541 KernelCert.NTK.Core <> kernel_of def
+R2543:2545 KernelCert.NTK.Core <> phi:51 var
+R2547:2547 KernelCert.NTK.Core <> y:53 var
+R2549:2549 KernelCert.NTK.Core <> x:52 var
+R2586:2594 KernelCert.NTK.Core <> kernel_of def
+R2605:2612 KernelCert.NTK.Core <> dot_comm thm
+prf 2629:2649 <> kernel_row_sum_as_dot
+binder 2662:2664 <> phi:54
+binder 2666:2666 <> x:55
+binder 2668:2669 <> ys:56
+binder 2671:2672 <> ds:57
+R2705:2711 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2679:2692 KernelCert.NTK.Core <> kernel_row_sum def
+R2694:2696 KernelCert.NTK.Core <> phi:54 var
+R2698:2698 KernelCert.NTK.Core <> x:55 var
+R2700:2701 KernelCert.NTK.Core <> ys:56 var
+R2703:2704 KernelCert.NTK.Core <> ds:57 var
+R2712:2714 KernelCert.NTK.Core <> dot def
+R2717:2719 KernelCert.NTK.Core <> phi:54 var
+R2721:2721 KernelCert.NTK.Core <> x:55 var
+R2725:2735 KernelCert.NTK.Core <> feature_sum def
+R2737:2739 KernelCert.NTK.Core <> phi:54 var
+R2741:2742 KernelCert.NTK.Core <> ys:56 var
+R2744:2745 KernelCert.NTK.Core <> ds:57 var
+R2849:2859 KernelCert.NTK.Core <> dot_vzero_r thm
+R2918:2928 KernelCert.NTK.Core <> dot_vzero_r thm
+R2969:2977 KernelCert.NTK.Core <> kernel_of def
+R2994:3003 KernelCert.NTK.Core <> dot_vadd_r thm
+R3006:3015 KernelCert.NTK.Core <> dot_smul_r thm
+prf 3038:3066 <> kernel_cross_quadratic_as_dot
+binder 3079:3081 <> phi:58
+binder 3083:3084 <> ys:59
+binder 3086:3087 <> ds:60
+binder 3089:3090 <> xs:61
+binder 3092:3093 <> cs:62
+R3138:3144 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3100:3121 KernelCert.NTK.Core <> kernel_cross_quadratic def
+R3123:3125 KernelCert.NTK.Core <> phi:58 var
+R3127:3128 KernelCert.NTK.Core <> ys:59 var
+R3130:3131 KernelCert.NTK.Core <> ds:60 var
+R3133:3134 KernelCert.NTK.Core <> xs:61 var
+R3136:3137 KernelCert.NTK.Core <> cs:62 var
+R3145:3147 KernelCert.NTK.Core <> dot def
+R3150:3160 KernelCert.NTK.Core <> feature_sum def
+R3162:3164 KernelCert.NTK.Core <> phi:58 var
+R3166:3167 KernelCert.NTK.Core <> xs:61 var
+R3169:3170 KernelCert.NTK.Core <> cs:62 var
+R3174:3184 KernelCert.NTK.Core <> feature_sum def
+R3186:3188 KernelCert.NTK.Core <> phi:58 var
+R3190:3191 KernelCert.NTK.Core <> ys:59 var
+R3193:3194 KernelCert.NTK.Core <> ds:60 var
+R3302:3312 KernelCert.NTK.Core <> dot_vzero_l thm
+R3371:3381 KernelCert.NTK.Core <> dot_vzero_l thm
+R3415:3435 KernelCert.NTK.Core <> kernel_row_sum_as_dot thm
+R3452:3461 KernelCert.NTK.Core <> dot_vadd_l thm
+R3464:3473 KernelCert.NTK.Core <> dot_smul_l thm
+prf 3496:3518 <> kernel_quadratic_as_dot
+binder 3531:3533 <> phi:63
+binder 3535:3536 <> xs:64
+binder 3538:3539 <> cs:65
+R3572:3578 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R3546:3561 KernelCert.NTK.Core <> kernel_quadratic def
+R3563:3565 KernelCert.NTK.Core <> phi:63 var
+R3567:3568 KernelCert.NTK.Core <> xs:64 var
+R3570:3571 KernelCert.NTK.Core <> cs:65 var
+R3579:3581 KernelCert.NTK.Core <> dot def
+R3584:3594 KernelCert.NTK.Core <> feature_sum def
+R3596:3598 KernelCert.NTK.Core <> phi:63 var
+R3600:3601 KernelCert.NTK.Core <> xs:64 var
+R3603:3604 KernelCert.NTK.Core <> cs:65 var
+R3608:3618 KernelCert.NTK.Core <> feature_sum def
+R3620:3622 KernelCert.NTK.Core <> phi:63 var
+R3624:3625 KernelCert.NTK.Core <> xs:64 var
+R3627:3628 KernelCert.NTK.Core <> cs:65 var
+R3668:3683 KernelCert.NTK.Core <> kernel_quadratic def
+R3694:3722 KernelCert.NTK.Core <> kernel_cross_quadratic_as_dot thm
+prf 3739:3766 <> kernel_quadratic_nonnegative
+binder 3779:3781 <> phi:66
+binder 3783:3784 <> xs:67
+binder 3786:3787 <> cs:68
+R3795:3798 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'<='_x not
+R3799:3814 KernelCert.NTK.Core <> kernel_quadratic def
+R3816:3818 KernelCert.NTK.Core <> phi:66 var
+R3820:3821 KernelCert.NTK.Core <> xs:67 var
+R3823:3824 KernelCert.NTK.Core <> cs:68 var
+R3864:3886 KernelCert.NTK.Core <> kernel_quadratic_as_dot thm
+R3897:3916 KernelCert.NTK.Core <> dot_self_nonnegative thm

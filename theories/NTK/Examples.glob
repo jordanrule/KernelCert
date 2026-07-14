@@ -1,0 +1,36 @@
+DIGEST 9094f056398fc47b14b2e375dd1dbb4c
+FKernelCert.NTK.Examples
+R27:31 Stdlib.Reals.Reals <> <> lib
+R33:36 Stdlib.Lists.List <> <> lib
+R38:41 Stdlib.setoid_ring.Ring <> <> lib
+R51:63 Stdlib.Lists.List ListNotations <> mod
+R102:105 KernelCert.NTK.Core <> <> lib
+R107:112 KernelCert.NTK.Affine <> <> lib
+def 151:164 <> affine_ntk_2_3
+R184:186 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R170:179 KernelCert.NTK.Affine <> affine_ntk def
+R207:228 KernelCert.NTK.Affine <> affine_ntk_closed_form thm
+def 253:286 <> affine_kernel_quadratic_two_points
+R347:349 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R292:307 KernelCert.NTK.Core <> kernel_quadratic def
+R309:331 KernelCert.NTK.Affine <> affine_jacobian_feature def
+R333:333 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R335:336 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R338:338 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R340:340 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R342:343 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R346:346 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R370:404 KernelCert.NTK.Affine <> affine_kernel_quadratic_closed_form thm
+def 438:472 <> affine_kernel_quadratic_zero_coeffs
+R539:541 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R478:493 KernelCert.NTK.Core <> kernel_quadratic def
+R495:517 KernelCert.NTK.Affine <> affine_jacobian_feature def
+R519:519 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R521:522 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R525:526 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R528:528 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R530:530 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R532:533 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R535:536 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R538:538 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R562:596 KernelCert.NTK.Affine <> affine_kernel_quadratic_closed_form thm
