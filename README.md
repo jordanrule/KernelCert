@@ -33,7 +33,7 @@ This Coq project proves a tiny but useful slice of NTK theory:
    K(x,y) = xy + 1.
    \]
 
-This is intentionally small and illustrative. It gives a concrete formal proof of the “Jacobian contraction” picture without pulling in the full machinery of infinite-width limits, convolutional architectures, or JAX semantics.
+This is intentionally small and illustrative. It gives a concrete formal proof of the “Jacobian contraction” picture without pulling in the full machinery of infinite-width limits, convolutional architectures, or JAX semantics. In the current version, that viewpoint is stated explicitly in the core theorem and carried through to the affine instance, with a small example showing the contraction identity in action.
 
 ### Theory and practice
 
@@ -61,12 +61,13 @@ In practice, libraries such as `neural-tangents` often compute empirical NTKs by
 - `theories/NTK/Core.v`:
   general finite-feature kernel machinery over 2D real features, including:
   - symmetry of `kernel_of`,
+  - an explicit Jacobian-feature contraction theorem,
   - a Gram/quadratic-form identity,
   - nonnegativity of the induced quadratic form.
 - `theories/NTK/Affine.v`:
-  the affine network instance with feature `(x, 1)` and closed-form NTK `xy + 1`.
+  the affine network instance with feature `(x, 1)` and closed-form NTK `xy + 1`, using the Jacobian contraction theorem directly.
 - `theories/NTK/Examples.v`:
-  tiny sanity-check examples.
+  tiny sanity-check examples, including a direct demonstration of the Jacobian-feature contraction identity.
 
 ### Build
 
