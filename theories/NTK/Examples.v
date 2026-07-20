@@ -28,4 +28,12 @@ Proof.
   ring.
 Qed.
 
+Example jacobian_feature_contraction_identity :
+  forall phi x y,
+    kernel_of phi x y = dot (phi x) (phi y).
+Proof.
+  intros phi x y.
+  apply kernel_of_is_jacobian_feature_contraction.
+Qed.
+
 

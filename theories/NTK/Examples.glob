@@ -1,4 +1,4 @@
-DIGEST 9094f056398fc47b14b2e375dd1dbb4c
+DIGEST 42b043bd0841d2fa0ac1453250c9d6ec
 FKernelCert.NTK.Examples
 R27:31 Stdlib.Reals.Reals <> <> lib
 R33:36 Stdlib.Lists.List <> <> lib
@@ -34,3 +34,18 @@ R532:533 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x
 R535:536 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
 R538:538 Stdlib.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
 R562:596 KernelCert.NTK.Affine <> affine_kernel_quadratic_closed_form thm
+def 630:666 <> jacobian_feature_contraction_identity
+binder 679:681 <> phi:1
+binder 683:683 <> x:2
+binder 685:685 <> y:3
+R709:711 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R692:700 KernelCert.NTK.Core <> kernel_of def
+R702:704 KernelCert.NTK.Examples <> phi:1 var
+R706:706 KernelCert.NTK.Examples <> x:2 var
+R708:708 KernelCert.NTK.Examples <> y:3 var
+R712:714 KernelCert.NTK.Core <> dot def
+R717:719 KernelCert.NTK.Examples <> phi:1 var
+R721:721 KernelCert.NTK.Examples <> x:2 var
+R725:727 KernelCert.NTK.Examples <> phi:1 var
+R729:729 KernelCert.NTK.Examples <> y:3 var
+R766:806 KernelCert.NTK.Core <> kernel_of_is_jacobian_feature_contraction thm

@@ -44,7 +44,9 @@ Theorem affine_ntk_is_jacobian_contraction :
   forall x y,
     affine_ntk x y = dot (affine_jacobian_feature x) (affine_jacobian_feature y).
 Proof.
-  reflexivity.
+  intros x y.
+  unfold affine_ntk.
+  apply kernel_of_is_jacobian_feature_contraction.
 Qed.
 
 Theorem affine_ntk_closed_form :

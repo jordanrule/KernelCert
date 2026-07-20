@@ -23,6 +23,15 @@ Definition dot (u v : vec2) : R :=
 Definition kernel_of (phi : R -> vec2) (x y : R) : R :=
   dot (phi x) (phi y).
 
+Theorem kernel_of_is_jacobian_feature_contraction :
+  forall phi x y,
+    kernel_of phi x y = dot (phi x) (phi y).
+Proof.
+  intros phi x y.
+  unfold kernel_of.
+  reflexivity.
+Qed.
+
 Fixpoint feature_sum (phi : R -> vec2) (xs cs : list R) : vec2 :=
   match xs, cs with
   | x :: xs', c :: cs' => vadd (smul c (phi x)) (feature_sum phi xs' cs')

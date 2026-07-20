@@ -1,4 +1,4 @@
-DIGEST 9acfc884e7488a590a2cf3a26ac74731
+DIGEST c0e1ad1710e89f077d128cfa5f86dabc
 FKernelCert.NTK.Affine
 R27:31 Stdlib.Reals.Reals <> <> lib
 R33:36 Stdlib.Lists.List <> <> lib
@@ -88,85 +88,87 @@ R1170:1192 KernelCert.NTK.Affine <> affine_jacobian_feature def
 R1194:1194 KernelCert.NTK.Affine <> x:16 var
 R1198:1220 KernelCert.NTK.Affine <> affine_jacobian_feature def
 R1222:1222 KernelCert.NTK.Affine <> y:17 var
-prf 1262:1283 <> affine_ntk_closed_form
-binder 1296:1296 <> x:18
-binder 1298:1298 <> y:19
-R1319:1321 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R1305:1314 KernelCert.NTK.Affine <> affine_ntk def
-R1316:1316 KernelCert.NTK.Affine <> x:18 var
-R1318:1318 KernelCert.NTK.Affine <> y:19 var
-R1327:1329 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
-R1323:1325 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
-R1322:1322 KernelCert.NTK.Affine <> x:18 var
-R1326:1326 KernelCert.NTK.Affine <> y:19 var
-R1363:1372 KernelCert.NTK.Affine <> affine_ntk def
-R1375:1383 KernelCert.NTK.Core <> kernel_of def
-R1386:1388 KernelCert.NTK.Core <> dot def
-R1391:1413 KernelCert.NTK.Affine <> affine_jacobian_feature def
-prf 1443:1462 <> affine_ntk_symmetric
-binder 1475:1475 <> x:20
-binder 1477:1477 <> y:21
-R1498:1500 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R1484:1493 KernelCert.NTK.Affine <> affine_ntk def
-R1495:1495 KernelCert.NTK.Affine <> x:20 var
-R1497:1497 KernelCert.NTK.Affine <> y:21 var
-R1501:1510 KernelCert.NTK.Affine <> affine_ntk def
-R1512:1512 KernelCert.NTK.Affine <> y:21 var
-R1514:1514 KernelCert.NTK.Affine <> x:20 var
-R1532:1550 KernelCert.NTK.Core <> kernel_of_symmetric thm
-prf 1565:1586 <> fst_feature_sum_affine
-binder 1599:1600 <> xs:22
-binder 1602:1603 <> cs:23
-R1657:1659 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R1610:1612 Corelib.Init.Datatypes <> fst def
-R1615:1625 KernelCert.NTK.Core <> feature_sum def
-R1627:1649 KernelCert.NTK.Affine <> affine_jacobian_feature def
-R1651:1652 KernelCert.NTK.Affine <> xs:22 var
-R1654:1655 KernelCert.NTK.Affine <> cs:23 var
-R1660:1677 KernelCert.NTK.Affine <> weighted_input_sum def
-R1679:1680 KernelCert.NTK.Affine <> xs:22 var
-R1682:1683 KernelCert.NTK.Affine <> cs:23 var
-prf 1872:1905 <> snd_feature_sum_affine_closed_form
-binder 1918:1919 <> xs:24
-binder 1921:1922 <> cs:25
-R1976:1978 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R1929:1931 Corelib.Init.Datatypes <> snd def
-R1934:1944 KernelCert.NTK.Core <> feature_sum def
-R1946:1968 KernelCert.NTK.Affine <> affine_jacobian_feature def
-R1970:1971 KernelCert.NTK.Affine <> xs:24 var
-R1973:1974 KernelCert.NTK.Affine <> cs:25 var
-R1979:1987 KernelCert.NTK.Affine <> coeff_sum def
-R1989:1990 KernelCert.NTK.Affine <> xs:24 var
-R1992:1993 KernelCert.NTK.Affine <> cs:25 var
-prf 2182:2216 <> affine_kernel_quadratic_closed_form
-binder 2229:2230 <> xs:26
-binder 2232:2233 <> cs:27
-R2286:2292 Corelib.Init.Logic <> ::type_scope:x_'='_x not
-R2240:2255 KernelCert.NTK.Core <> kernel_quadratic def
-R2257:2279 KernelCert.NTK.Affine <> affine_jacobian_feature def
-R2281:2282 KernelCert.NTK.Affine <> xs:26 var
-R2284:2285 KernelCert.NTK.Affine <> cs:27 var
-R2323:2325 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
-R2293:2293 Stdlib.Reals.Rfunctions <> ::R_scope:x_'^'_x not
-R2318:2321 Stdlib.Reals.Rfunctions <> ::R_scope:x_'^'_x not
-R2294:2311 KernelCert.NTK.Affine <> weighted_input_sum def
-R2313:2314 KernelCert.NTK.Affine <> xs:26 var
-R2316:2317 KernelCert.NTK.Affine <> cs:27 var
-R2326:2326 Stdlib.Reals.Rfunctions <> ::R_scope:x_'^'_x not
-R2342:2345 Stdlib.Reals.Rfunctions <> ::R_scope:x_'^'_x not
-R2327:2335 KernelCert.NTK.Affine <> coeff_sum def
-R2337:2338 KernelCert.NTK.Affine <> xs:26 var
-R2340:2341 KernelCert.NTK.Affine <> cs:27 var
-R2382:2404 KernelCert.NTK.Core <> kernel_quadratic_as_dot thm
-R2416:2418 KernelCert.NTK.Core <> dot def
-R2431:2452 KernelCert.NTK.Affine <> fst_feature_sum_affine thm
-R2455:2488 KernelCert.NTK.Affine <> snd_feature_sum_affine_closed_form thm
-prf 2513:2547 <> affine_kernel_quadratic_nonnegative
-binder 2560:2561 <> xs:28
-binder 2563:2564 <> cs:29
-R2572:2575 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'<='_x not
-R2576:2591 KernelCert.NTK.Core <> kernel_quadratic def
-R2593:2615 KernelCert.NTK.Affine <> affine_jacobian_feature def
-R2617:2618 KernelCert.NTK.Affine <> xs:28 var
-R2620:2621 KernelCert.NTK.Affine <> cs:29 var
-R2657:2691 KernelCert.NTK.Affine <> affine_kernel_quadratic_closed_form thm
+R1256:1265 KernelCert.NTK.Affine <> affine_ntk def
+R1276:1316 KernelCert.NTK.Core <> kernel_of_is_jacobian_feature_contraction thm
+prf 1333:1354 <> affine_ntk_closed_form
+binder 1367:1367 <> x:18
+binder 1369:1369 <> y:19
+R1390:1392 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1376:1385 KernelCert.NTK.Affine <> affine_ntk def
+R1387:1387 KernelCert.NTK.Affine <> x:18 var
+R1389:1389 KernelCert.NTK.Affine <> y:19 var
+R1398:1400 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R1394:1396 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'*'_x not
+R1393:1393 KernelCert.NTK.Affine <> x:18 var
+R1397:1397 KernelCert.NTK.Affine <> y:19 var
+R1434:1443 KernelCert.NTK.Affine <> affine_ntk def
+R1446:1454 KernelCert.NTK.Core <> kernel_of def
+R1457:1459 KernelCert.NTK.Core <> dot def
+R1462:1484 KernelCert.NTK.Affine <> affine_jacobian_feature def
+prf 1514:1533 <> affine_ntk_symmetric
+binder 1546:1546 <> x:20
+binder 1548:1548 <> y:21
+R1569:1571 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1555:1564 KernelCert.NTK.Affine <> affine_ntk def
+R1566:1566 KernelCert.NTK.Affine <> x:20 var
+R1568:1568 KernelCert.NTK.Affine <> y:21 var
+R1572:1581 KernelCert.NTK.Affine <> affine_ntk def
+R1583:1583 KernelCert.NTK.Affine <> y:21 var
+R1585:1585 KernelCert.NTK.Affine <> x:20 var
+R1603:1621 KernelCert.NTK.Core <> kernel_of_symmetric thm
+prf 1636:1657 <> fst_feature_sum_affine
+binder 1670:1671 <> xs:22
+binder 1673:1674 <> cs:23
+R1728:1730 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1681:1683 Corelib.Init.Datatypes <> fst def
+R1686:1696 KernelCert.NTK.Core <> feature_sum def
+R1698:1720 KernelCert.NTK.Affine <> affine_jacobian_feature def
+R1722:1723 KernelCert.NTK.Affine <> xs:22 var
+R1725:1726 KernelCert.NTK.Affine <> cs:23 var
+R1731:1748 KernelCert.NTK.Affine <> weighted_input_sum def
+R1750:1751 KernelCert.NTK.Affine <> xs:22 var
+R1753:1754 KernelCert.NTK.Affine <> cs:23 var
+prf 1943:1976 <> snd_feature_sum_affine_closed_form
+binder 1989:1990 <> xs:24
+binder 1992:1993 <> cs:25
+R2047:2049 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2000:2002 Corelib.Init.Datatypes <> snd def
+R2005:2015 KernelCert.NTK.Core <> feature_sum def
+R2017:2039 KernelCert.NTK.Affine <> affine_jacobian_feature def
+R2041:2042 KernelCert.NTK.Affine <> xs:24 var
+R2044:2045 KernelCert.NTK.Affine <> cs:25 var
+R2050:2058 KernelCert.NTK.Affine <> coeff_sum def
+R2060:2061 KernelCert.NTK.Affine <> xs:24 var
+R2063:2064 KernelCert.NTK.Affine <> cs:25 var
+prf 2253:2287 <> affine_kernel_quadratic_closed_form
+binder 2300:2301 <> xs:26
+binder 2303:2304 <> cs:27
+R2357:2363 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2311:2326 KernelCert.NTK.Core <> kernel_quadratic def
+R2328:2350 KernelCert.NTK.Affine <> affine_jacobian_feature def
+R2352:2353 KernelCert.NTK.Affine <> xs:26 var
+R2355:2356 KernelCert.NTK.Affine <> cs:27 var
+R2394:2396 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'+'_x not
+R2364:2364 Stdlib.Reals.Rfunctions <> ::R_scope:x_'^'_x not
+R2389:2392 Stdlib.Reals.Rfunctions <> ::R_scope:x_'^'_x not
+R2365:2382 KernelCert.NTK.Affine <> weighted_input_sum def
+R2384:2385 KernelCert.NTK.Affine <> xs:26 var
+R2387:2388 KernelCert.NTK.Affine <> cs:27 var
+R2397:2397 Stdlib.Reals.Rfunctions <> ::R_scope:x_'^'_x not
+R2413:2416 Stdlib.Reals.Rfunctions <> ::R_scope:x_'^'_x not
+R2398:2406 KernelCert.NTK.Affine <> coeff_sum def
+R2408:2409 KernelCert.NTK.Affine <> xs:26 var
+R2411:2412 KernelCert.NTK.Affine <> cs:27 var
+R2453:2475 KernelCert.NTK.Core <> kernel_quadratic_as_dot thm
+R2487:2489 KernelCert.NTK.Core <> dot def
+R2502:2523 KernelCert.NTK.Affine <> fst_feature_sum_affine thm
+R2526:2559 KernelCert.NTK.Affine <> snd_feature_sum_affine_closed_form thm
+prf 2584:2618 <> affine_kernel_quadratic_nonnegative
+binder 2631:2632 <> xs:28
+binder 2634:2635 <> cs:29
+R2643:2646 Stdlib.Reals.Rdefinitions <> ::R_scope:x_'<='_x not
+R2647:2662 KernelCert.NTK.Core <> kernel_quadratic def
+R2664:2686 KernelCert.NTK.Affine <> affine_jacobian_feature def
+R2688:2689 KernelCert.NTK.Affine <> xs:28 var
+R2691:2692 KernelCert.NTK.Affine <> cs:29 var
+R2728:2762 KernelCert.NTK.Affine <> affine_kernel_quadratic_closed_form thm
