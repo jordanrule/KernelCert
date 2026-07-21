@@ -78,16 +78,13 @@ In practice, empirical NTKs are often computed by contracting Jacobians. This re
 If Coq is installed, build the project from this directory with:
 
 ```sh
-make
+make ntk
 ```
 
-or directly with:
+To build both NTK and Quantum proof targets together:
 
 ```sh
-coqc -Q theories KernelCert theories/NTK/Core.v
-coqc -Q theories KernelCert theories/NTK/Asymptotic.v
-coqc -Q theories KernelCert theories/NTK/Affine.v
-coqc -Q theories KernelCert theories/NTK/Examples.v
+make all
 ```
 
 To clean generated Coq artifacts:
@@ -144,13 +141,6 @@ If Coq is installed, build the project from this directory with:
 make quantum
 ```
 
-or directly with:
-
-```sh
-coqc -Q theories KernelCert theories/Quantum/Superposition.v
-coqc -Q theories KernelCert theories/Quantum/Entanglement.v
-coqc -Q theories KernelCert theories/Quantum/KernelProof.v
-```
 
 To clean generated Coq artifacts:
 
