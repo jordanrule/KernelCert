@@ -2,7 +2,8 @@ COQFLAGS := -Q theories KernelCert
 COQFILES := \
 	theories/NTK/Core.v \
 	theories/NTK/Affine.v \
-	theories/NTK/Examples.v
+	theories/NTK/Examples.v \
+	theories/Quantum/KernelProof.v
 
 .PHONY: all clean
 

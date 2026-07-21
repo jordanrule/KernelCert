@@ -104,13 +104,15 @@ Instead, it certifies a compact mathematical core that mirrors the structure of 
 
 ## Quantum Machine Learning Compiler
 
-This section introduces a formalization of quantum machine learning concepts, focusing on the physical principles of superposition and entanglement. The goal is to provide a rigorous foundation for quantum compilers in the context of machine learning.
+This section introduces a formalization of quantum machine learning concepts, focusing on the physical principles of superposition and entanglement. The goal is to provide a rigorous foundation for quantum compilers and kernel-style reasoning in the context of machine learning.
 
 ### What is formalized here?
 
 1. **Superposition**: The ability of a quantum system to exist in multiple states simultaneously. This is represented mathematically as a linear combination of basis states.
 2. **Entanglement**: A quantum phenomenon where the state of one particle is dependent on the state of another, no matter the distance between them. This is formalized using tensor products and entangled state vectors.
 3. **Quantum Circuit Compilation**: The process of translating high-level quantum algorithms into low-level gate operations, ensuring correctness and optimization.
+4. **Fault Tolerance of Quantum Circuits**: A simple formal statement showing that a kernel estimate remains bounded under a small circuit error rate.
+5. **Scalability to Large Quantum Systems**: A basic linear-growth argument showing that a kernel estimate scales predictably with system size.
 
 ### Theory and practice
 
@@ -136,8 +138,8 @@ In practice, quantum compilers must:
   formalization of superposition principles and their mathematical representation.
 - `theories/Quantum/Entanglement.v`:
   proofs and examples of entangled states and their properties.
-- `theories/Quantum/Compiler.v`:
-  formalization of quantum circuit compilation, including optimization and verification.
+- `theories/Quantum/KernelProof.v`:
+  a compact proof layer for fault tolerance and scalability properties of a quantum ML kernel estimate.
 
 ### Build
 
@@ -152,7 +154,7 @@ or directly with:
 ```sh
 coqc -Q theories KernelCert theories/Quantum/Superposition.v
 coqc -Q theories KernelCert theories/Quantum/Entanglement.v
-coqc -Q theories KernelCert theories/Quantum/Compiler.v
+coqc -Q theories KernelCert theories/Quantum/KernelProof.v
 ```
 
 To clean generated Coq artifacts:

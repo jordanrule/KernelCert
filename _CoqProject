@@ -3,4 +3,5 @@
 theories/NTK/Core.v
 theories/NTK/Affine.v
 theories/NTK/Examples.v
+theories/Quantum/KernelProof.v
 
