@@ -1,6 +1,7 @@
 COQFLAGS := -Q theories KernelCert
 COQFILES := \
 	theories/NTK/Core.v \
+	theories/NTK/Asymptotic.v \
 	theories/NTK/Affine.v \
 	theories/NTK/Examples.v \
 	theories/Quantum/KernelProof.v

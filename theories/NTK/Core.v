@@ -5,7 +5,7 @@ Local Open Scope R_scope.
 
 (** A tiny finite-dimensional kernel model suitable for a demonstrative
     Neural Tangent Kernel proof. We model the NTK as a Jacobian-feature inner
-    product, mirroring the jacobian-contraction view used in neural-tangents. *)
+    product via explicit Jacobian contraction. *)
 
 Definition vec2 := (R * R)%type.
 
