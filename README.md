@@ -163,15 +163,7 @@ To clean generated Coq artifacts:
 make clean
 ```
 
-### Scope and limitations
-
-This is a pedagogical certification artifact, not a full formalization of quantum machine learning. In particular, it does **not** attempt to prove:
-
-- full fault-tolerance guarantees for arbitrary circuit depths,
-- comprehensive scalability proofs for large-scale quantum architectures,
-- or integration with specific quantum hardware.
-
-Instead, it certifies a compact set of foundational principles and their application to quantum-kernel reasoning and compiler-style formalization.
+This project remains a pedagogical artifact focused on foundational principles, compiler-style formalization, and basic quantum-kernel reasoning rather than a complete production-grade quantum machine learning stack.
 
 ## License
 
