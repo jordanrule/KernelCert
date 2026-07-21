@@ -30,7 +30,7 @@ This Coq project proves a tiny but useful slice of NTK theory:
    \[
    K(x,y) = xy + 1.
    \]
-4. A width-indexed NTK family converges to a limiting kernel under eventual feature stability (a compact infinite-width convergence statement).
+4. A width-indexed NTK family converges pointwise to a limiting kernel under eventual feature stability (formalized in `pointwise_limit_of_width_kernels`).
 5. If the Jacobian feature is parameter-independent, the NTK is constant across training time indices.
 
 This is intentionally small and illustrative. It gives a concrete formal proof of the Jacobian-contraction picture, extends it with an explicit infinite-width convergence layer, and captures a training-time constancy theorem for parameter-independent Jacobians.
@@ -45,7 +45,7 @@ The NTK of a model is the inner product of output derivatives with respect to pa
 K(x,y) = \left\langle \nabla_\theta f(\theta, x), \nabla_\theta f(\theta, y) \right\rangle.
 \]
 
-In the infinite-width regime this kernel can become nearly constant during training, which is one of the key reasons NTKs are useful in theory: gradient descent can then be approximated by kernel regression dynamics.
+In the infinite-width regime this kernel can become nearly constant during training, which is one of the key reasons NTKs are useful in theory: gradient descent can then be approximated by kernel regression dynamics. This repository includes a formal pointwise convergence theorem for width-indexed NTKs under eventual feature stability assumptions.
 
 #### Practice
 
@@ -96,14 +96,6 @@ To clean generated Coq artifacts:
 make clean
 ```
 
-### Scope and limitations
-
-This is a pedagogical certification artifact, not a full formalization of all NTK theory. It now certifies:
-
-- finite-feature NTK symmetry and positive-semidefinite quadratic forms,
-- an affine closed-form NTK derived from Jacobian features,
-- an infinite-width convergence statement (under eventual feature stability),
-- and a training-time NTK constancy statement (for parameter-independent Jacobians).
 
 ## Quantum Machine Learning Compiler
 

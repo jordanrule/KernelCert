@@ -1,7 +1,7 @@
 From Stdlib Require Import Reals List Psatz Ring.
 Import ListNotations.
 
-From KernelCert.NTK Require Import Core.
+From KernelCert.NTK Require Import Core Asymptotic.
 
 Local Open Scope R_scope.
 
@@ -105,6 +105,33 @@ Proof.
   intros xs cs.
   rewrite affine_kernel_quadratic_closed_form.
   nra.
+Qed.
+
+Definition affine_jacobian_map (_ : params) (x : R) : vec2 :=
+  affine_jacobian_feature x.
+
+Definition affine_width_features (_ : nat) : R -> vec2 :=
+  affine_jacobian_feature.
+
+Theorem affine_ntk_infinite_width_convergence :
+  pointwise_limit_of_width_kernels affine_width_features affine_jacobian_feature.
+Proof.
+  apply ntk_infinite_width_convergence_from_eventual_feature_stability.
+  intro x.
+  exists 0%nat.
+  intros n _.
+  reflexivity.
+Qed.
+
+Theorem affine_ntk_training_time_constancy :
+  forall theta_t t1 t2 x y,
+    ntk_trajectory affine_jacobian_map theta_t t1 x y =
+    ntk_trajectory affine_jacobian_map theta_t t2 x y.
+Proof.
+  intros theta_t t1 t2 x y.
+  apply ntk_training_time_constancy_from_parameter_independent_jacobian.
+  intros theta1 theta2 z.
+  reflexivity.
 Qed.
 
 
