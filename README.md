@@ -165,13 +165,13 @@ make clean
 
 ### Scope and limitations
 
-This is a pedagogical certification artifact, not a full formalization of quantum machine learning. In particular, it does **not** prove:
+This is a pedagogical certification artifact, not a full formalization of quantum machine learning. In particular, it does **not** attempt to prove:
 
 - full fault-tolerance guarantees for arbitrary circuit depths,
-- rigorous scalability proofs for large-scale quantum architectures,
+- comprehensive scalability proofs for large-scale quantum architectures,
 - or integration with specific quantum hardware.
 
-Instead, it certifies foundational principles and their application to quantum compilers.
+Instead, it certifies a compact set of foundational principles and their application to quantum-kernel reasoning and compiler-style formalization.
 
 ## License
 
