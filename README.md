@@ -32,6 +32,7 @@ This Coq project proves a tiny but useful slice of NTK theory:
    \]
 4. A width-indexed NTK family converges pointwise to a limiting kernel under eventual feature stability (formalized in `pointwise_limit_of_width_kernels`).
 5. If the Jacobian feature is parameter-independent, the NTK is constant across training time indices.
+6. A polynomial Jacobian-map case study is embedded as an NTK feature source: the map is defined in Coq, the listed four preimages are proved to share the image `(1,0,0)`, and the induced projected NTK inherits symmetry/PSD/convergence/constancy results from the core theory.
 
 This is intentionally small and illustrative. It gives a concrete formal proof of the Jacobian-contraction picture, extends it with an explicit infinite-width convergence layer, and captures a training-time constancy theorem for parameter-independent Jacobians.
 
@@ -70,6 +71,11 @@ In practice, empirical NTKs are often computed by contracting Jacobians. This re
   - a training-time NTK constancy theorem from parameter-independent Jacobians.
 - `theories/NTK/Affine.v`:
   the affine network instance with feature `(x, 1)` and closed-form NTK `xy + 1`, plus concrete instantiations of the convergence and constancy theorems.
+- `theories/NTK/JacobianMap.v`:
+  a polynomial Jacobian-map case study that:
+  - defines `t = 1 + xy`, `q = t^2 z + y^2 (1 + 3t)`, and the 3D polynomial map,
+  - proves the four stated points map to `(1,0,0)`,
+  - projects map components into a 2D NTK feature and reuses core symmetry/PSD/asymptotic theorems.
 - `theories/NTK/Examples.v`:
   tiny sanity-check examples, including a direct demonstration of the Jacobian-feature contraction identity.
 

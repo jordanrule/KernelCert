@@ -3,6 +3,7 @@ NTKFILES := \
 	theories/NTK/Core.v \
 	theories/NTK/Asymptotic.v \
 	theories/NTK/Affine.v \
+	theories/NTK/JacobianMap.v \
 	theories/NTK/Examples.v
 
 QUANTUMFILES := \
@@ -26,4 +27,3 @@ all: ntk quantum
 
 clean:
 	@find theories -type f \( -name '*.vo' -o -name '*.glob' -o -name '*.aux' -o -name '*.vos' -o -name '*.vok' \) -delete
-

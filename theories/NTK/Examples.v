@@ -1,7 +1,7 @@
 From Stdlib Require Import Reals List Ring.
 Import ListNotations.
 
-From KernelCert.NTK Require Import Core Affine Asymptotic.
+From KernelCert.NTK Require Import Core Affine Asymptotic JacobianMap.
 
 Local Open Scope R_scope.
 
@@ -59,4 +59,22 @@ Proof.
   apply affine_ntk_training_time_constancy.
 Qed.
 
+Example jacobian_map_first_preimage_hits_100 :
+  jc_map jc_p1 = (1, 0, 0).
+Proof.
+  apply jc_map_p1_to_100.
+Qed.
 
+Example jacobian_map_fourth_preimage_hits_100 :
+  jc_map jc_p4 = (1, 0, 0).
+Proof.
+  apply jc_map_p4_to_100.
+Qed.
+
+Example jacobian_map_ntk_symmetric_at_fixed_context :
+  forall x1 x2,
+    jc_ntk (11 / 3) (-475 / 9) x1 x2 = jc_ntk (11 / 3) (-475 / 9) x2 x1.
+Proof.
+  intros x1 x2.
+  apply jc_ntk_symmetric.
+Qed.
