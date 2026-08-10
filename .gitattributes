@@ -1,0 +1,5 @@
+# Ensure GitHub Linguist classifies Coq proof sources correctly.
+*.v linguist-language=Coq
+*.glob linguist-language=Coq
+*.vo linguist-generated=true
+
