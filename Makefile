@@ -11,7 +11,10 @@ QUANTUMFILES := \
 	theories/Quantum/Superposition.v \
 	theories/Quantum/KernelProof.v
 
-.PHONY: all ntk quantum rh-pdf clean
+RIEMANNFILES := \
+	theories/Riemann/Roadmap.v
+
+.PHONY: all ntk quantum riemann rh-pdf clean
 
 ntk:
 	@for file in $(NTKFILES); do \
@@ -25,7 +28,13 @@ quantum:
 		coqc $(COQFLAGS) $$file || exit $$?; \
 	done
 
-all: ntk quantum
+riemann:
+	@for file in $(RIEMANNFILES); do \
+		echo "coqc $(COQFLAGS) $$file"; \
+		coqc $(COQFLAGS) $$file || exit $$?; \
+	done
+
+all: ntk quantum riemann
 
 rh-pdf:
 	@command -v pdflatex >/dev/null 2>&1 || { echo "pdflatex not found; install a TeX distribution first."; exit 1; }

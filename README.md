@@ -156,6 +156,55 @@ make clean
 
 This project remains a pedagogical artifact focused on foundational principles, compiler-style formalization, and basic quantum-kernel reasoning rather than a complete production-grade quantum machine learning stack.
 
+## Riemann Hypothesis Roadmap
+
+This section documents a formal, machine-checkable roadmap around the Riemann Hypothesis (RH).
+It does **not** claim an unconditional proof of RH. Instead, it encodes a conditional closure structure:
+
+1. Gap A (rigid test-function framework) is represented as a closed component in the roadmap logic.
+2. Gap B (uniform stability/remainder bounds) is represented as an explicit assumption.
+3. Gap C (Hilbert-Polya style spectral/operator closure) is represented as an explicit assumption.
+4. From A+B+C, the final RH target is derived conditionally.
+
+### What is formalized here?
+
+- A Coq module that defines abstract closure assumptions for the three-gap pipeline.
+- A machine-checked theorem that packages the dependency graph:
+  
+  > Gap A + Gap B + Gap C -> RH
+
+- A bundled theorem form suitable for CI checks and incremental formalization.
+
+### File layout
+
+- `theories/Riemann/Roadmap.v`:
+  machine-checkable logical skeleton for conditional RH closure, including:
+  - abstract assumptions for Gap A/B/C,
+  - intermediate propositions (`NoOffLineZeros`, `SpectralReality`),
+  - final conditional theorem `conditional_rh_closure`.
+- `riemann_hypothesis.tex`:
+  mathematical draft detailing the theorem/lemma roadmap and open obligations.
+
+### Build
+
+If Coq is installed, build the roadmap target with:
+
+```sh
+make riemann
+```
+
+To build all Coq targets currently wired in the Makefile:
+
+```sh
+make all
+```
+
+To compile the RH draft document (requires `pdflatex`):
+
+```sh
+make rh-pdf
+```
+
 ## License
 
 This subproject is licensed under the MIT License. See `LICENSE`.
