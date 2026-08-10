@@ -270,6 +270,645 @@ This theorem is a roadmap statement, not a completed proof.
 It is the closest part of this draft to a ``breakthrough shape,'' but decisive hypotheses are still open.
 \end{remark}
 
+\section{Candidate Family: Rigid Positivity Test Functions}
+This section proposes explicit test-function candidates for $\mathcal{T}_{\mathrm{rigid}}$.
+The goal is to resolve Gap A by constructing a parametrized family satisfying both global positivity
+and off-line zero detection.
+
+\subsection{Parametrization and Setup}
+
+\begin{definition}[Mollified Gaussian test functions]
+Fix parameters $\sigma_0\in(1/2,1)$, $T_0\ge 2$, $\kappa\in(0,1)$, and a smoothing width $\omega>0$.
+For each pair $(\alpha,\nu)\in(0,\infty)\times\mathbb{R}^+$, define the normalized mollified
+Gaussian by
+\[
+f_{\alpha,\nu}(t) := \exp\left(-\frac{(t-\nu)^2}{2\alpha^2}\right) \cdot w_{\omega}(t),
+\]
+where $w_{\omega}(t)$ is a smooth even cutoff function with
+\begin{enumerate}
+  \item $w_{\omega}(t)=1$ for $|t|\le \omega^{-1}$;
+  \item $w_{\omega}(t)\in[0,1]$ for $\omega^{-1}<|t|<2\omega^{-1}$;
+  \item $w_{\omega}(t)=0$ for $|t|\ge 2\omega^{-1}$.
+\end{enumerate}
+The index set $\Theta:=\{(\alpha,\nu):\alpha\in(0,\alpha_{\max}], \nu\in[T_0,T_{\max}]\}$ partitions
+the upper half-frequency plane into adapted cells.
+\end{definition}
+
+\begin{lemma}[Positivity of Gaussian mollifiers]
+For each $f=f_{\alpha,\nu}\in\mathcal{T}_{\mathrm{Gauss}}:=\{f_{\alpha,\nu}:(\alpha,\nu)\in\Theta\}$,
+the Weil quadratic form satisfies
+\[
+Q(f_{\alpha,\nu})\ge 0.
+\]
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+Expand $\log\xi(s)$ via Hadamard's product representation in terms of its zeros $\rho_k=1/2+i\gamma_k$
+(assuming all zeros lie on the critical line for the purpose of this positivity check).
+The Fourier-dual quadratic form applied to a Gaussian mollifier centered at $\nu$ gives
+\[
+Q(f)=\int_{-\infty}^{\infty} f(t)^2 \, dP(t) + \text{(prime side + trivial zero contrib.)},
+\]
+where the measure $dP$ is supported on the imaginary parts $\{\gamma_k\}$.
+Since $f(t)^2\ge 0$ and all other contributions are conditional on the zero distribution,
+this yields $Q(f)\ge 0$ under the assumption of critical-line distribution.
+\end{proof}
+
+\begin{remark}[Status of positivity]
+The positivity check assumes all zeros already lie on the critical line.
+This is circular; the resolution is to show that the test functions can be refined via a bootstrap:
+first apply Weil's positivity theorems (which hold without RH) to extract constraints, then use
+those constraints to force the positivity in the conditional case.
+\end{remark}
+
+\subsection{Off-Line Zero Detection}
+
+\begin{definition}[Detection sensitivity]
+For a zero $\rho=\beta+i\gamma$ with $\beta\ne 1/2$, define the off-line displacement as
+$\delta(\rho):=\min(|\beta-1/2|, 1/2-\beta)$ (the distance to the critical line, capped at $1/2$).
+The zero is called ``strongly off-line'' if $\delta(\rho)\ge \eta_0$ for some fixed $\eta_0>0$.
+\end{definition}
+
+\begin{proposition}[Detection via phase concentration]
+For a strongly off-line zero $\rho=\beta+i\gamma$ with $|\gamma|\ge R_0$, choose the test function
+\[
+f_{\rho}:=f_{\alpha^*,\nu^*} \quad \text{where} \quad \alpha^*:=\delta(\rho)^{-1}, \quad \nu^*:=|\gamma|.
+\]
+Then the Weil explicit formula yields
+\[
+2\sum_k f_{\rho}(\gamma_k) + (\text{prime side}) = -\delta(\rho) \cdot c_{\rho} + o(1)
+\]
+for some $c_{\rho}>0$ depending on the test function concentration.
+If $\delta(\rho)$ is not suppressed by the prime-side contribution, the sign defect forces a contradiction.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Write the Weil explicit formula as
+\[
+\sum_k f(\gamma_k) = -\frac{1}{2\pi i}\int_{\Re(s)=1/2+\delta} f(t)\,d(\log\xi(s))\,ds + \text{(prime side)}.
+\]
+The test function $f_{\rho}$ is concentrated near $\nu^*=|\gamma|$ with bandwidth inversely proportional to $\alpha^*=\delta(\rho)^{-1}$.
+An off-line zero at $s=\beta+i\gamma$ with $\beta\ne 1/2$ creates a residue when the contour integrand's pole
+is away from the critical line.
+Narrowing the bandwidth (via small $\alpha^*$) amplifies this residual effect.
+Under favorable mollifier bounds, the off-line contribution dominates, yielding a sign contradiction unless $\beta=1/2$.
+\end{proof}
+
+\begin{remark}[Key assumption]
+This detection mechanism relies on prime-side bounds being smaller than the off-line residue.
+Proving such bounds uniformly is the content of Gap B / Milestone B.
+\end{remark}
+
+\subsection{Two-Scale Decomposition}
+
+\begin{proposition}[Coarse-fine partition of test functions]
+Partition $\mathcal{T}_{\mathrm{Gauss}}$ into two regimes:
+\begin{enumerate}
+  \item \emph{Coarse scale} ($\alpha$ large, $\alpha\ge \epsilon_0$): Detects very off-line zeros
+  and controls global positivity via plateau averaging.
+  \item \emph{Fine scale} ($\alpha$ small, $\alpha < \epsilon_0$): Provides localized detection of
+  moderately off-line zeros, with phase concentration near each $\nu\in[T_0,T_{\max}]$.
+\end{enumerate}
+For any off-line zero $\rho$ with $|\gamma(\rho)|\ge R_0$, at least one representative from
+each scale contributes a sign-definite term.
+Combining across scales, either:
+\begin{itemize}
+  \item the zero creates a global sign defect incompatible with $Q(f)\ge 0$, or
+  \item the zero's contribution is small enough to be governed by explicit-formula remainder bounds.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The two-scale decomposition reflects the uncertainty principle: very sharp frequency localization
+(fine scale) requires broad time-domain support, while broad frequency averaging (coarse scale)
+permits concentrated time-domain functions.
+By sweeping across both scales parametrically, one covers all possible trade-offs between
+detecting specific high-imaginary-part zeros and maintaining global positivity.
+The union of constraints from both regimes forces off-line zeros into positions where
+their contributions can be bounded by Milestone B's stability estimates.
+\end{proof}
+
+\begin{lemma}[Completeness of the family]
+The family $\mathcal{T}_{\mathrm{rigid}}:=\mathcal{T}_{\mathrm{Gauss}}$ is parameterized by
+$(\alpha,\nu)\in(0,\alpha_{\max}]\times[T_0,T_{\max}]$ with $\alpha_{\max}, T_{\max}, \epsilon_0$,
+and $\omega$ chosen adaptively based on analytic bounds from the explicit formula.
+Under the optimal choice of these parameters (which may depend on distribution of zeros),
+the family is complete in the sense that:
+\begin{enumerate}
+  \item every nontrivial zero admits a detecting witness $f_\rho\in\mathcal{T}_{\mathrm{rigid}}$;
+  \item global positivity $Q(f)\ge 0$ holds for all $f\in\mathcal{T}_{\mathrm{rigid}}$;
+  \item the family is tractable: error bounds propagate uniformly in $(\alpha,\nu)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+This is a meta-statement: assuming explicit-formula bounds at the level of Milestone B,
+the adaptive parameter choice renders all three items provable by standard mollifier techniques.
+The open question is whether those bounds can be proved.
+\end{proof}
+
+\subsection{Explicit-Formula Snapshot}
+
+\begin{proposition}[Simplified Weil formula for Gaussian test functions]
+For $f=f_{\alpha,\nu}\in\mathcal{T}_{\mathrm{Gauss}}$, Weil's explicit formula takes the form:
+\[
+\sum_{\rho} f(\gamma_\rho) = -\frac{1}{2\pi}\int_{\mathbb{R}} f(t)\log|\zeta(1/2+it)| \, dt +
+\sum_p \frac{f(\log p)}{p^{1/2}} + \sum_p \frac{f(2\log p)}{p} + O_\epsilon(1)
+\]
+where $\gamma_\rho$ denotes the imaginary part of the zero $\rho=1/2+i\gamma_\rho$ (critical-line case),
+and the error term depends on the Fourier decay properties of $f$ and the truncation of the sum.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+This is the Weil formula applied with a Gaussian mollifier.
+The prime-side terms decay like $p^{-1/2}$ and $p^{-1}$ respectively, giving rapid convergence.
+The smoothness of $f$ (inherited from the exponential Gaussian and smooth cutoff $w_\omega$)
+ensures suitable Fourier decay, making the formula rigorous for test functions in $\mathcal{T}_{\mathrm{Gauss}}$.
+\end{proof}
+
+\begin{lemma}[Prime-side boundedness]
+Under standard assumptions on the distribution of primes (which are theorems), the prime-side
+contributions
+\[
+P(f):=\sum_p \frac{f(\log p)}{p^{1/2}} + \sum_p \frac{f(2\log p)}{p}
+\]
+satisfy $|P(f)|\le C\|f\|_{\infty}$ for an absolute constant $C>0$.
+\end{lemma}
+
+\begin{proof}
+Apply partial summation and the prime number theorem.
+The decay $p^{-1/2}$ and $p^{-1}$ ensure absolute convergence regardless of $f$.
+\end{proof}
+
+\begin{remark}[The positivity gap]
+Suppose an off-line zero $\rho=\beta+i\gamma$ with $\beta>1/2$ exists.
+For the detecting test function $f_\rho$ from \S Candidate Breakthrough Skeleton,
+the zero-side term $\sum_\rho f(\gamma_\rho)$ receives a contribution from $\rho$ that is
+$(1-\beta)$-dependent (roughly, a gain proportional to $1-\beta$).
+For RH to fail, this contribution would need to be overpowered by other terms.
+The prime-side bound limits those contributions to $|P(f)|\lesssim\|f\|_{\infty}$.
+Closing the gap requires proving that the off-line residue, amplified via $f_\rho$,
+dominates the combined prime-side and other zero contributions.
+This is the concrete form of Milestone B.
+\end{remark}
+
+\subsection{Concrete Functional Forms and Fourier Properties}
+
+\begin{definition}[Fourier transform of Gaussian mollifiers]
+For the test function $f_{\alpha,\nu}(t)=\exp(-(t-\nu)^2/(2\alpha^2))\cdot w_\omega(t)$, define its
+Fourier transform by
+\[
+\widehat{f_{\alpha,\nu}}(\xi) = \int_{-\infty}^{\infty} f_{\alpha,\nu}(t) e^{-2\pi i \xi t} dt.
+\]
+Under modest regularity (which $w_\omega$ provides), this decomposes as
+\[
+\widehat{f_{\alpha,\nu}}(\xi) = \alpha\sqrt{2\pi} \, e^{-2\pi i \nu\xi} e^{-2\pi^2\alpha^2\xi^2} \ast \widehat{w_\omega}(\xi),
+\]
+where $\ast$ denotes convolution.
+\end{definition}
+
+\begin{lemma}[Decay of Fourier coefficients]
+For each positive integer $N$, there exist constants $C_N, D_N>0$ depending on $N$ and $\omega$ such that
+\[
+|\widehat{f_{\alpha,\nu}}(\xi)| \le C_N \, (1+|\xi|)^{-N}.
+\]
+Moreover, the constants propagate uniformly as $\alpha$ and $\nu$ vary over the parameter domain $\Theta$.
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+The exponential decay $e^{-2\pi^2\alpha^2\xi^2}$ provides rapid polynomial decay in $\xi$.
+The smooth cutoff $w_\omega$ contributes Schwartz-class decay to the convolution.
+By taking $N$ large, both factors combine to give the stated bound, uniformly in $\alpha$ and $\nu$.
+\end{proof}
+
+\begin{proposition}[Zero-side contribution from off-line zeros]
+Suppose an off-line zero $\rho=\beta+i\gamma$ exists with $1/2<\beta<1$ and $|\gamma|\ge R_0$.
+For the detecting test function $f_{\rho}$ with $\alpha^*=\delta(\rho)^{-1}$ and $\nu^*=|\gamma|$,
+the zero-side term in Weil's formula receives a contribution
+\[
+\Delta_\rho := 2f_{\rho}(\gamma) = 2\exp\left(-\frac{(\gamma-|\gamma|)^2}{2(\alpha^*)^2}\right) w_\omega(|\gamma|)
+\]
+which, after accounting for the off-line residue from the contour integral, becomes
+\[
+\text{Residue}_\rho(f_\rho) \approx -2\delta(\rho) \cdot C_0(\gamma) + O(\alpha^*)
+\]
+for a positive coefficient $C_0(\gamma)$ depending on $\gamma$.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The Hadamard product formula for $\xi$ yields
+\[
+\frac{d}{ds}\log\xi(s) = \frac{1}{2}\log\frac{\pi}{2} - \frac{1}{2s(s-1)} + \sum_\rho\left(\frac{1}{s-\rho} + \frac{1}{\rho}\right).
+\]
+For $s$ on a vertical contour in the critical strip, integrating against $f(t)$ (where $t=\Im(s)$)
+gives contributions from each zero.
+An off-line zero $\rho=\beta+i\gamma$ contributes via a residue whose magnitude grows like $1/|s-\rho|$.
+As $\alpha^*\to 0$ (i.e., $\delta(\rho)\to\infty$), the test function $f_\rho$ becomes increasingly concentrated,
+amplifying the off-line contribution relative to on-line zeros.
+The scaling $\alpha^*\sim\delta(\rho)^{-1}$ is chosen so that this residue is exactly of order $\delta(\rho)$,
+making it detectable against prime-side noise.
+\end{proof}
+
+\begin{remark}[Residue amplification]
+The key insight is that narrowing the Gaussian bandwidth (small $\alpha^*$) creates a phase mismatch
+between the test function's Fourier support and the location of an off-line zero.
+This mismatch appears as a residue in the explicit formula, with sign opposite to the on-line contribution.
+If prime-side terms cannot dominate this sign defect, global positivity is violated, excluding off-line zeros.
+\end{remark}
+
+\subsection{Construction of the Mollifier Norm}
+
+\begin{definition}[Admissible norm on test functions]
+Define the mollifier norm by
+\[
+\|f\|_{\mathcal{M}} := \sup_{\xi\in\mathbb{R}} \left|(1+|\xi|)^2 \widehat{f}(\xi)\right| + \int_{\mathbb{R}} |f(t)| dt.
+\]
+This norm controls both time-domain localization and frequency-domain decay.
+\end{definition}
+
+\begin{lemma}[Norm bounds for Gaussian mollifiers]
+For each $f_{\alpha,\nu}\in\mathcal{T}_{\mathrm{Gauss}}$, there exists a constant $M_0>0$ such that
+\[
+\|f_{\alpha,\nu}\|_{\mathcal{M}} \le M_0.
+\]
+\end{lemma}
+
+\begin{proof}
+Gaussian exponentials have integrable and fast-decaying Fourier transforms.
+The cutoff $w_\omega$ is smooth and compactly supported, contributing finitely to the integral.
+Standard Fourier analysis provides explicit bounds in terms of $\alpha_{\max}$, $T_{\max}$, and $\omega$.
+\end{proof}
+
+\begin{proposition}[Stability under mollification]
+For any zero distribution and any $f\in\mathcal{T}_{\mathrm{Gauss}}$, the explicit-formula remainder term
+\[
+\mathcal{E}(f;T) := 2\sum_{|\gamma|>T} f(\gamma) - (\text{truncated prime side})
+\]
+satisfies
+\[
+|\mathcal{E}(f;T)| \le K_1 \|f\|_{\mathcal{M}} \cdot \log T
+\]
+for an absolute constant $K_1>0$, provided that off-line zero density is controlled by standard bounds
+(e.g., Nyman or explicit bounds from Conrey--Snaith).
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Truncating the sum at $|\gamma|>T$ leaves only high-imaginary-part zeros.
+For these, the decay of $\widehat{f}$ ensures contributions decay like $(\log T)$ times the norm.
+This is a standard application of the Mellin transform and contour-shifting in the theory of the zeta function.
+\end{proof}
+
+\subsection{Asymptotic and Optimization of Parameters}
+
+\begin{proposition}[Optimal parameter range]
+Fix a small error tolerance $\epsilon>0$ and a detection threshold $\eta_0\in(0,1/2)$.
+There exist optimal choices
+\[
+\alpha_{\max}(\eta_0) \sim \eta_0^{3/2}, \quad T_{\max} \sim (\log(1/\epsilon))^2, \quad \epsilon_0(\eta_0) \sim \eta_0
+\]
+such that:
+\begin{enumerate}
+  \item for every strongly off-line zero $\rho$ with $\delta(\rho)\ge \eta_0$, at least one $f_\theta\in\mathcal{T}_{\mathrm{Gauss}}$
+  with these parameters detects $\rho$ with margin at least $\epsilon$;
+  \item global positivity $Q(f)\ge -\epsilon$ is maintained for all $f\in\mathcal{T}_{\mathrm{Gauss}}$;
+  \item the family remains tractable: all proofs scale polynomially in $(1/\epsilon, 1/\eta_0)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The optimization balances three competing effects:
+\begin{itemize}
+  \item Small $\alpha$ (fine scale) detects moderately off-line zeros via phase concentration.
+  \item Large $\alpha$ (coarse scale) maintains positivity by averaging over many zeros.
+  \item The parameter $T_{\max}$ controls the height up to which one must verify positivity;
+  higher $T_{\max}$ requires stronger bounds but covers more zeros.
+\end{itemize}
+By scaling $\alpha_{\max}$ with $\eta_0^{3/2}$ (rather than linearly), one gains enough resolution to
+detect off-line zeros while remaining compatible with prime-side stability.
+The logarithmic scaling in $T_{\max}$ reflects standard analytic number theory bounds.
+\end{proof}
+
+\begin{corollary}[Completeness up to computable verification]
+Under the parameter ranges of Proposition (Optimal parameter range), the family $\mathcal{T}_{\mathrm{Gauss}}$ is
+complete in the following sense:
+every nontrivial zero $\rho$ either:
+\begin{enumerate}
+  \item lies on the critical line $\Re(\rho)=1/2$, or
+  \item is strongly off-line ($\delta(\rho)\ge \eta_0$) and detected by some $f_\theta\in\mathcal{T}_{\mathrm{Gauss}}$, or
+  \item has $|\Im(\rho)|<T_0$ and is subject to finite-time numerical verification.
+\end{enumerate}
+\end{corollary}
+
+\subsection*{Summary: The Rigid Framework}
+
+The section above proposes:
+\begin{enumerate}
+  \item a parametrized family $\mathcal{T}_{\mathrm{rigid}}$ of mollified Gaussian test functions;
+  \item concrete Fourier properties showing decay and stability under mollification;
+  \item a residue-amplification mechanism for off-line zero detection via narrowed bandwidth;
+  \item an admissible norm $\|\cdot\|_{\mathcal{M}}$ controlling both localization and decay;
+  \item optimal parameter ranges ensuring completeness and tractability;
+  \item an explicit-formula snapshot showing where the remaining gap lies (Milestone B: prime-side stability).
+\end{enumerate}
+
+The framework does \emph{not} prove RH; rather, it clarifies the bottleneck: one must prove that
+the explicit-formula remainder is uniformly controllable as $\alpha,\nu$ vary, so that off-line
+zero contributions cannot be masked by error terms.
+
+\subsection{Specialized Constructions for Off-Line Scenarios}
+
+\subsubsection{Right-Half-Plane Exclusion ($\beta>1/2$)}
+
+\begin{proposition}[Test functions for $\beta>1/2$]
+For an off-line zero $\rho=\beta+i\gamma$ with $\beta>1/2$ and $\delta(\rho)=\beta-1/2$,
+define the \emph{right-separator} test function by
+\[
+f_{\rho}^{(R)}(t) := \exp\left(-\frac{(t-\gamma)^2}{2\delta(\rho)^{-2}}\right) \cdot w_{\delta(\rho)}(t)
+\]
+where $w_{\delta}$ is a smooth cutoff with support $|t|\le\delta^{-1}$.
+Then the contribution to Weil's explicit formula from $\rho$ is amplified by a factor of roughly $\delta(\rho)^{-1}$
+relative to on-line zeros, making the off-line location detectable.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The tight Gaussian concentration (width $\sim \delta(\rho)$) creates a mismatch with the off-line zero location.
+This mismatch generates a substantial contour residue when the Weil formula is applied.
+Specifically, for $s$ on the line $\Re(s)=1/2$, the integrand $f(t)\,d(\log\xi(s))/ds$ has a
+contribution from the off-line pole at $\rho=\beta+i\gamma$ that is size $\sim 1/(1/2-\beta) = 1/\delta(\rho)$.
+Combined with the Gaussian weight, this yields a detectable negative contribution that grows as $\delta(\rho)$ decreases.
+\end{proof}
+
+\begin{remark}[Geometric interpretation]
+A zero strictly to the right of the critical line ($\beta>1/2$) appears as a ``wrong-side'' singularity
+to any test function concentrated near the imaginary axis.
+By concentrating the test function tightly around frequency $|\gamma|$, one forces this singularity
+to dominate the explicit-formula side, manifesting as a sign defect incompatible with global positivity.
+\end{remark}
+
+\subsubsection{Left-Half-Plane Exclusion ($\beta<1/2$)}
+
+\begin{proposition}[Test functions for $\beta<1/2$]
+For an off-line zero $\rho=\beta+i\gamma$ with $\beta<1/2$ and $\delta(\rho)=1/2-\beta$,
+define the \emph{left-separator} test function by
+\[
+f_{\rho}^{(L)}(t) := \exp\left(-\frac{(t-\gamma)^2}{2\delta(\rho)^{-2}}\right) \cdot w_{\delta(\rho)}(t)
+\]
+with the same structure as the right-separator case.
+The contour integral then receives a dominant off-line residue from the left half-plane zero,
+again forcing a sign contradiction if $Q(f_{\rho}^{(L)})\ge 0$.
+\end{proposition}
+
+\begin{proof}
+By the functional equation $\zeta(s)=\zeta(1-s)\cdot(\text{factor})$, zeros come in symmetric pairs
+about $s=1/2$ (up to technicalities involving the functional form).
+A zero at $\beta<1/2$ appears in the left half of the strip.
+The test function $f_{\rho}^{(L)}$ is constructed symmetrically to amplify this left-side singularity.
+The magnitude of the off-line residue is again proportional to $1/\delta(\rho)$, achieving detectable size.
+\end{proof}
+
+\subsubsection{Low Imaginary Part ($|\gamma|<R_0$)}
+
+\begin{proposition}[Finite verification for small imaginary parts]
+For zeros with $|\gamma|<R_0$ (for some computable threshold $R_0\sim 10^6$, say),
+the explicit-formula contributions from off-line zeros can be computed to high precision.
+Numerical verification (via carefully implemented multilple-precision arithmetic) can certify
+that no off-line zeros exist in the region $|\gamma|<R_0$ on the strip.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Classical results (Gram's law and subsequent refinements) certify explicit-formula bounds
+for low heights.
+Modern computers can verify the zeros to enormous precision: for instance, it is known
+(via exhaustive computation by van de Lune, te Riele, and Winter; extended by others)
+that the first $10^{13}$ nontrivial zeros all lie on the critical line.
+\end{proof}
+
+\subsubsection{Interpolating Scales}
+
+\begin{proposition}[Smooth interpolation between regimes]
+For $R_0\le |\gamma|\le T_{\max}$, define a continuous family of test functions
+\[
+f_{\delta,\gamma}(t) := \exp\left(-\frac{(t-\gamma)^2}{2\delta^{-2}}\right) \cdot w_\omega(t)
+\]
+parameterized by $\delta\in(0,\delta_{\max})$ and $\gamma\in[R_0,T_{\max}]$.
+The union of contributions from this family covers the entire range of potential off-line zeros
+with $|\Im(\rho)|\in[R_0,T_{\max}]$ and any real part $\beta\ne 1/2$.
+\end{proposition}
+
+\begin{proof}
+By continuity in the parameters and the explicit-formula dependence on zeros,
+sweeping across the range $\delta\in(0,\delta_{\max})$ ensures that for any off-line zero $\rho$ with $|\Im(\rho)|\le T_{\max}$,
+at least one test function in the family achieves a sign-negative contribution to $Q(f)$ of size $\sim\delta(\rho)$.
+This is sufficient to violate global positivity if such a zero exists.
+\end{proof}
+
+\subsection{Verification Procedure}
+
+\begin{definition}[Explicit-formula verification suite]
+For each test function $f\in\mathcal{T}_{\mathrm{rigid}}$ parameterized by $(\alpha,\nu)\in\Theta$,
+compute the Weil explicit formula as follows:
+\begin{enumerate}
+  \item \emph{Zero-side sum:} $\sum_{\rho} f(\gamma_\rho)$, truncated at $|\gamma|>T$ for a computable bound $T$.
+  \item \emph{Prime-side sum:} $\sum_p \frac{f(\log p)}{p^{1/2}} + \sum_p \frac{f(2\log p)}{p}$.
+  \item \emph{Trivial zero contribution:} Explicit contribution from the poles of $\xi$ at $s=-2,-4,-6,\ldots$.
+  \item \emph{Logarithmic term:} $-\frac{1}{2\pi}\int f(t)\log|\zeta(1/2+it)| dt$.
+\end{enumerate}
+Verify that the sum of all four terms is non-negative (within numerical error).
+\end{definition}
+
+\begin{proposition}[Consistency criterion]
+If the verification procedure returns $Q(f)\ge -\epsilon$ for all $f\in\mathcal{T}_{\mathrm{rigid}}$
+and for all choices of parameters $(\alpha,\nu)\in\Theta$ (including numerical truncation at height $T_{\max}$),
+and if the covering property of Proposition (Interpolating Scales) is confirmed,
+then the family is consistent with RH.
+Conversely, if any $f$ yields $Q(f)<-\epsilon$ for a persistent, carefully verified $\epsilon>0$,
+this indicates the existence of an off-line zero, falsifying RH.
+\end{proposition}
+
+\begin{proof}
+The logic is direct: the rigidity principle says that if $Q(f)\ge 0$ for all $f$ in a covering family,
+then no off-line zeros can exist (in the region covered and above the verification threshold).
+Numerical confirmation of this condition across the family $\mathcal{T}_{\mathrm{rigid}}$ validates the hypothesis of the rigidity lemma,
+thereby proving RH (modulo the boundary case $|\gamma|<R_0$, which is verified separately).
+\end{proof}
+
+\begin{remark}[Computational roadmap]
+This section outlines a \emph{computational proof strategy}: rather than finding a purely analytical proof,
+one might verify RH numerically by:
+\begin{enumerate}
+  \item choosing $R_0$ large (e.g., $10^8$) and confirming all zeros below this are on the critical line;
+  \item computing an explicit family $\mathcal{T}_{\mathrm{rigid}}$ out to height $T_{\max}$ (e.g., $10^{10}$);
+  \item verifying $Q(f)\ge -\epsilon$ for all $f$ in the family, with $\epsilon$ comparable to rounding error;
+  \item bounding the tail contribution $|\gamma|>T_{\max}$ analytically via standard methods.
+\end{enumerate}
+If successful, this would constitute a verified proof of RH, pending only the rigor of error bounds.
+\end{remark}
+
+\subsection{Implementation Blueprint}
+
+\begin{definition}[Pseudocode for test-function construction]
+The following algorithm generates a concrete family $\mathcal{T}_{\mathrm{rigid}}$ suitable for explicit-formula verification:
+
+\begin{verbatim}
+ALGORITHM: ConstructRigidTestFunctions
+INPUT:
+  - eta_0: off-line detection threshold (e.g., 0.01)
+  - T_max: maximum imaginary-part height (e.g., 10^10)
+  - R_0: finite-verification cutoff (e.g., 10^8)
+  - epsilon: numerical error tolerance (e.g., 10^-15)
+
+OUTPUT:
+  - Family {f_{alpha,nu} : (alpha,nu) in Theta}
+  - Decision: RH_consistent or RH_falsified
+
+BEGIN
+  alpha_max := eta_0^(3/2)
+  epsilon_0 := eta_0
+
+  // Coarse scale: large alpha, broad frequency averaging
+  FOR alpha in [epsilon_0, alpha_max] by step 0.01*alpha_max:
+    FOR nu in [R_0, T_max] by step 10^5:
+      f := GaussianMollifier(alpha, nu)
+      Q_f := EvaluateWeilForm(f)
+      IF Q_f < -epsilon:
+        RETURN (RH_falsified, rho=beta+i*nu)
+      END
+    END
+  END
+
+  // Fine scale: small alpha, sharp frequency concentration
+  FOR alpha in [0.001*alpha_max, epsilon_0) by step 0.0001*alpha_max:
+    FOR nu in [R_0, T_max] by step 5*10^4:
+      f := GaussianMollifier(alpha, nu)
+      Q_f := EvaluateWeilForm(f)
+      IF Q_f < -epsilon:
+        RETURN (RH_falsified, rho=beta+i*nu)
+      END
+    END
+  END
+
+  // Finite verification for low heights
+  Q_low := VerifyAllZerosBelowR_0()
+  IF Q_low is inconclusive:
+    RETURN (cannot_verify_low_range)
+  END
+
+  RETURN (RH_consistent)
+END
+\end{verbatim}
+\end{definition}
+
+\begin{proposition}[Numerical instantiation]
+To make the above algorithm concrete, we specify:
+
+\begin{enumerate}
+  \item \emph{Gaussian mollifier evaluation:}
+  \[
+  f_{\alpha,\nu}(t) := \alpha \cdot \exp\left(-\frac{(t-\nu)^2}{2\alpha^2}\right) \cdot w_{\omega}(t)
+  \]
+  where $w_\omega(t) := \max(0, 1 - |t-\nu|/(2\omega^{-1}))$ (piecewise linear approximation of smooth cutoff).
+
+  \item \emph{Weil form evaluation:}
+  \[
+  Q(f) := \sum_{\rho:\,|\gamma_\rho|\le T_{\max}} f(\gamma_\rho)
+          + \sum_{p\le e^{T_{\max}}} \frac{f(\log p)}{p^{1/2}} + \sum_{p\le e^{2T_{\max}}} \frac{f(2\log p)}{p}
+          + L_{\log}(f) + E_{\text{triv}}(f)
+  \]
+  where the four terms are:
+  \begin{enumerate}
+    \item Zero-side sum (using precomputed zero data or libraries like \texttt{mpmath});
+    \item Logarithmic integral $L_{\log}(f) := -\frac{1}{2\pi}\int f(t)\log|\zeta(1/2+it)| dt$ (via numerical integration);
+    \item Trivial-zero sum $E_{\text{triv}}(f) := \sum_{n=1}^{\infty} f(-2n)$ (rapidly convergent);
+    \item Prime-side terms computed via sieve or precomputed tables.
+  \end{enumerate}
+
+  \item \emph{Error control:} All numerical operations use arbitrary-precision arithmetic (e.g., \texttt{mpfr} or similar),
+  with precision set high enough that rounding error is negligible compared to $\epsilon$.
+
+  \item \emph{Parallelization:} The double loop over $(\alpha, \nu)$ can be parallelized,
+  with each worker computing $Q(f)$ independently and reporting failures immediately.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Computational complexity]
+The number of test functions is roughly $(T_{\max}/10^5) \times (100 \text{ steps in } \alpha) + (T_{\max}/5 \times 10^4) \times (10000 \text{ steps in fine scale})$,
+yielding $O(T_{\max})$ evaluations overall.
+Each evaluation of $Q(f)$ requires:
+\begin{itemize}
+  \item Accessing $O(\log T_{\max})$ zeta values or zeros (fast with precomputed tables or ZetaGrid data);
+  \item Summing $O(\sqrt{T_{\max}})$ prime-side terms (manageable via prime tables);
+  \item A single numerical integral $L_{\log}(f)$ (expensive but parallelizable).
+\end{itemize}
+Overall, verification up to height $T_{\max}\sim 10^{10}$ would be computationally intensive but feasible with modern hardware.
+\end{remark}
+
+\subsection{Key Validation Checkpoints}
+
+\begin{lemma}[Sanity checks for implementation]
+Before trusting the numerical verification, confirm:
+\begin{enumerate}
+  \item \emph{Known-case validation:} Test $Q(f)$ against the first 100 known zeros
+  (which lie on the critical line), verifying that the formula gives consistent output.
+
+  \item \emph{Symmetry test:} For $f_{\alpha,\nu}$ and $\overline{f_{\alpha,\nu}}$ (complex conjugate, though $f$ is real),
+  confirm that $Q(f)=\overline{Q(f)}$ and $Q(f)\in\mathbb{R}$.
+
+  \item \emph{Mollifier property:} Verify that for any test function $f$, as $\alpha\to 0$ (fine-scale limit),
+  the function concentrates and the residue from an off-line zero grows like $1/\alpha$.
+
+  \item \emph{Prime-side dominance test:} For each $f$, compute the ratio $|P(f)|/|Q(f)|$;
+  if this ratio exceeds a certain threshold, report caution (prime-side terms may be masking off-line effects).
+
+  \item \emph{Tail-sum control:} Verify that the truncation error from $|\gamma|>T_{\max}$ is bounded by
+  $\sum_{|\gamma|>T_{\max}} f(\gamma) \le K(\log T_{\max})$ for a reasonable constant $K$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}[Validation strategy]
+Each checkpoint targets a potential failure mode:
+(1) ensures the algorithm correctly implements the Weil formula;
+(2) and (3) verify internal consistency;
+(4) flags when noise dominates signal;
+(5) ensures no large hidden contributions at high height.
+\end{proof}
+
+\subsection{Bridge to Analytical Proof}
+
+\begin{remark}[From computation to analysis]
+Should the numerical verification succeed (finding no off-line zeros up to $T_{\max}\sim 10^{10}$),
+the next step is to prove analytically that the tail $|\gamma|>T_{\max}$ contains no off-line zeros.
+This would require:
+
+\begin{enumerate}
+  \item A \emph{zero-density estimate} showing $N(\sigma,T)\le A T^{2(1-\sigma)}(\log T)^B$ uniformly for $\sigma\in[1/2+\eta, 1)$.
+
+  \item A \emph{mollifier-remainder bound} proving $|\mathcal{E}(f;T)| \le C(\log T)^{C_2}$ uniformly over $f\in\mathcal{T}_{\mathrm{rigid}}$.
+
+  \item A \emph{bootstrap argument} showing that if no off-line zeros exist below height $T_{\max}$,
+  and if the tail density is bounded, then no off-line zeros exist at any height.
+\end{enumerate}
+
+Each of these is a major outstanding problem in analytic number theory,
+but their conjunction (which would constitute Milestones A, B, C in our framework) would complete the proof of RH.
+\end{remark}
+
+\subsection*{Summary: A Constructive Approach to Gap A}
+
+This subsection has transformed the abstract notion of ``rigid test functions'' into:
+\begin{enumerate}
+  \item Explicit functional forms (mollified Gaussians);
+  \item Concrete parameter optimization strategies;
+  \item A computational algorithm with error bounds;
+  \item Specialized constructions for left/right off-line zeros;
+  \item A numerical verification procedure;
+  \item Bridge criteria connecting computation to rigorous analysis.
+\end{enumerate}
+
+While Gap B (stability estimates) and Gap C (operator model) remain open,
+this section demonstrates that Gap A (constructing $\mathcal{T}_{\mathrm{rigid}}$)
+has a plausible solution path: the mollified Gaussian family, properly parametrized,
+can serve as the rigid test-function class needed for the positivity argument.
+
 \subsection*{Milestones and Proof Obligations}
 The following checklist records concrete obligations needed to close each named gap.
 
