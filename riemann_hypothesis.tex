@@ -1,0 +1,208 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Notes on the Riemann Hypothesis}
+\author{KernelCert Workspace Notes}
+\date{August 10, 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Important Note}
+The Riemann Hypothesis (RH) is an open problem in mathematics as of the date above.
+No accepted proof is known.
+Accordingly, this document does \emph{not} present a proof; it records a precise statement,
+standard equivalent viewpoints, and where known approaches face major obstacles.
+
+\section{Statement of the Problem}
+\begin{definition}[Riemann zeta function]
+For $\Re(s)>1$, define
+\[
+\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}.
+\]
+It has a meromorphic continuation to $\mathbb{C}$ with a unique simple pole at $s=1$.
+\end{definition}
+
+\begin{lemma}[Location of nontrivial zeros]
+All nontrivial zeros of $\zeta(s)$ lie in the critical strip
+\[
+0<\Re(s)<1.
+\]
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+Use the Euler product to rule out zeros on $\Re(s)>1$, then apply the functional equation and
+symmetry to transport this exclusion to $\Re(s)<0$ except for trivial zeros at negative even integers.
+\end{proof}
+
+\begin{theorem}[Riemann Hypothesis (open)]
+Every nontrivial zero $\rho$ of $\zeta(s)$ satisfies
+\[
+\Re(\rho)=\tfrac12.
+\]
+\end{theorem}
+
+\begin{remark}
+The theorem above is currently unproved; in modern usage it is a conjecture.
+\end{remark}
+
+\section{Equivalent and Near-Equivalent Perspectives}
+The next statements are classical equivalences to RH and are included as formal targets.
+
+\begin{proposition}[Prime counting error formulation]
+Let $\pi(x)$ be the prime counting function and $\operatorname{Li}(x)$ the logarithmic integral.
+Then RH is equivalent to
+\[
+\pi(x)=\operatorname{Li}(x)+O\!\left(\sqrt{x}\log x\right).
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Apply explicit formulas linking primes and zeros of $\zeta$, then bound contributions from zeros.
+The direction RH $\Rightarrow$ error term uses zero locations; the converse uses contour estimates to
+exclude zeros off the critical line.
+\end{proof}
+
+\begin{proposition}[Chebyshev function formulation]
+For
+\[
+\psi(x)=\sum_{p^k\le x}\log p,
+\]
+RH is equivalent to
+\[
+\psi(x)=x+O\!\left(\sqrt{x}(\log x)^2\right).
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Use von Mangoldt's explicit formula. The oscillatory term is governed by nontrivial zeros; the stated
+error term is exactly the threshold corresponding to real part $1/2$.
+\end{proof}
+
+\begin{proposition}[Li criterion]
+Let $\xi(s)$ be Riemann's xi-function and define
+\[
+\lambda_n = \frac{1}{(n-1)!}\left.\frac{d^n}{ds^n}\left(s^{n-1}\log\xi(s)\right)\right|_{s=1}
+\quad (n\ge 1).
+\]
+Then RH is equivalent to $\lambda_n\ge 0$ for all $n\ge 1$.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Express $\log\xi$ through its zero set and identify $\lambda_n$ as weighted sums over zeros.
+Nonnegativity for all $n$ matches the critical-line condition via Li's theorem.
+\end{proof}
+
+\section{First Crack: Potential Solution Paths (Not a Proof)}
+This section recasts potential approaches as formal research propositions.
+Each item is intentionally marked as incomplete.
+
+\begin{proposition}[Program A: Hilbert-Polya spectral route]
+Assume there exists a densely defined self-adjoint operator $T$ with a trace formula matching the
+zeta explicit formula and whose spectrum corresponds to the imaginary parts of nontrivial zeros.
+Then RH follows.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Self-adjointness forces real spectral parameters. The spectral identification then places all
+nontrivial zeros on the critical line after normalization.
+\end{proof}
+
+\begin{remark}[Status]
+No construction of such an operator is known with all required analytic and spectral properties.
+\end{remark}
+
+\begin{proposition}[Program B: positivity from explicit-formula kernels]
+Assume one can build a test-function class for Weil's explicit formula such that any zero with
+$\Re(\rho)\ne 1/2$ contributes a strictly sign-definite term violating global positivity.
+Then RH follows.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Under the stated kernel properties, existence of an off-line zero implies a sign contradiction in the
+explicit formula, forcing all zeros to satisfy $\Re(\rho)=1/2$.
+\end{proof}
+
+\begin{remark}[Status]
+Known kernel-positivity frameworks are not yet strong enough to enforce this global contradiction.
+\end{remark}
+
+\begin{proposition}[Program C: de Bruijn-Newman route]
+Let $\Lambda$ denote the de Bruijn-Newman constant. If one proves $\Lambda\le 0$, then RH follows.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Classically, RH is equivalent to $\Lambda\le 0$ for the heat-flow deformation of $\xi$; thus the claim is immediate.
+\end{proof}
+
+\begin{remark}[Status]
+Available lower bounds and computations indicate proximity to $0$ but do not prove $\Lambda\le 0$.
+\end{remark}
+
+\begin{proposition}[Program D: mollifier and moment route]
+Assume one can prove moment estimates and zero-density bounds strong enough to exclude every off-line
+zero after mollification. Then RH follows.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The hypothesis collapses off-line zero density to zero while retaining all nontrivial zeros in the strip,
+hence every nontrivial zero must lie on $\Re(s)=1/2$.
+\end{proof}
+
+\begin{remark}[Status]
+Current methods establish substantial partial results (including large proportions on the line),
+but not complete exclusion of off-line zeros.
+\end{remark}
+
+\begin{lemma}[Minimal completion criteria]
+Any complete proof attempt should provide:
+\begin{enumerate}
+  \item a mechanism forcing all nontrivial zeros to have real part $1/2$;
+  \item a non-circular derivation avoiding RH-equivalent assumptions;
+  \item full analytic error control suitable for independent verification.
+\end{enumerate}
+\end{lemma}
+
+\begin{remark}
+No path in this document currently satisfies all items of the lemma.
+\end{remark}
+
+\section{Non-Completion Declaration}
+\begin{theorem}[What is and is not proved here]
+This document does not prove RH.
+\end{theorem}
+
+\begin{proof}
+All theorem-level claims beyond classical equivalences are conditional research programs, and each is
+accompanied by an explicit unresolved obstacle.
+\end{proof}
+
+\section{Build Note}
+This file is written to be conservative for \texttt{pdflatex} (standard article class and AMS packages only).
+To compile locally when a TeX distribution is installed, run:
+\begin{verbatim}
+pdflatex -interaction=nonstopmode -halt-on-error riemann_hypothesis.tex
+\end{verbatim}
+
+\section{References (Starting Points)}
+\begin{itemize}
+  \item H. M. Edwards, \emph{Riemann's Zeta Function}.
+  \item E. C. Titchmarsh and D. R. Heath-Brown, \emph{The Theory of the Riemann Zeta-Function}.
+  \item A. Ivic, \emph{The Riemann Zeta-Function}.
+  \item J. B. Conrey, ``The Riemann Hypothesis,'' \emph{Notices of the AMS} 50 (2003), 341--353.
+\end{itemize}
+
+\end{document}
+
