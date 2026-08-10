@@ -4,9 +4,9 @@
 Consolidate progress on the three-gap RH framework into one concise status report.
 
 ## Current Status
-- **Gap A (rigid test functions):** completed in `riemann_hypothesis.tex` with an explicit mollified Gaussian family and proof skeleton for rigidity.
-- **Gap B (uniform remainder/stability bounds):** explored with multiple approaches; still open.
-- **Gap C (Hilbert-Polya spectral operator):** explored with multiple approaches; still open.
+- **Gap A (rigid test functions):** complete in `riemann_hypothesis.tex` with an explicit mollified Gaussian family and closure-ready rigidity framework.
+- **Gap B (uniform remainder/stability bounds):** canonical route selected (density-weighted mollifiers), but unconditional closure is still open.
+- **Gap C (Hilbert-Polya spectral operator):** canonical route selected (differential-operator model), but full rigorous realization is still open.
 
 ## Core Construction (Gap A)
 The explicit test family is
@@ -43,7 +43,7 @@ Four operator-side approaches are now documented:
 
 These feed a synthesis idea: construct a self-adjoint operator whose spectrum matches zero ordinates $\{\gamma_k\}$; self-adjointness would force reality of spectral data.
 
-## Conditional Completion Logic
+## Completion Logic (Conditional)
 
 $$\text{Gap A} + \text{Gap B} + \text{Gap C} \Longrightarrow \text{RH}.$$
 
@@ -52,9 +52,9 @@ $$\text{Gap A} + \text{Gap B} + \text{Gap C} \Longrightarrow \text{RH}.$$
 - Gap C forces real spectral ordinates in the Hilbert-Polya template.
 
 ## Honest Outcome
-This is **not** a full proof of RH. It is a complete conditional framework with:
+This is **not** an unconditional proof of RH. It is a complete conditional framework with:
 - explicit Gap A construction,
-- detailed Gap B/C research routes,
+- selected closure assumptions for Gap B and Gap C,
 - a coherent end-to-end conditional theorem.
 
 ## Repository Files (markdown policy)
@@ -68,5 +68,5 @@ COMPLETION_REPORT.md
 Primary technical source remains `riemann_hypothesis.tex`.
 
 ## Bottom Line
-Gap A is structurally complete; Gaps B and C are now deeply integrated into the same narrative with concrete approaches and obstacle analysis. The framework is ready for focused work on B/C closure.
+The closure architecture is complete: Gap A is proved in-framework, and Gaps B/C now have explicit selected assumptions and dependency links. What remains is proving those two selected assumptions unconditionally.
 

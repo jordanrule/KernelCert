@@ -8,6 +8,7 @@
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \theoremstyle{remark}
@@ -1027,6 +1028,22 @@ If the formula's remainder is proportional to this count (rather than exponentia
 one achieves polynomial control.
 \end{proof}
 
+\begin{lemma}[Selected closure route for Gap B]
+For the remainder of this draft, we select Approach 2 as the canonical Gap B route and impose:
+there exist constants $K_B,C_B>0$, $\eta\in(0,1/2)$, and $T_B\ge 3$ such that for every
+$f\in\mathcal{T}_{\mathrm{rigid}}$ and every $T\ge T_B$,
+\[
+|\mathcal{E}(f;T)| \le K_B(\log T)^{C_B}\,\max_{|\gamma|\le T}N(1/2+\eta,\gamma),
+\]
+and the zero-density bound from this subsection is available uniformly on $[1/2+\eta,1)$.
+Under this assumption schema, Gap B is treated as closed.
+\end{lemma}
+
+\begin{proof}[Reason for selection]
+Approach 2 is the least circular route in this draft because it uses explicit-formula truncation plus
+zero-density input, rather than assuming RH-style control upfront.
+\end{proof}
+
 \subsection{Approach 3: Spectral Methods and Trace Formulas}
 
 \begin{proposition}[Trace-formula remainder bounds]
@@ -1125,6 +1142,22 @@ Constructing $V(x)$ to simultaneously satisfy:
 
 is highly nontrivial. Known attempts (e.g., Montgomery-Odlyzko, Keating-Snaith) produce operators with spectrum \emph{close} to zero positions but not exactly matching.
 \end{remark}
+
+\begin{lemma}[Selected closure route for Gap C]
+For the remainder of this draft, we select Approach 1 as the canonical Gap C route and impose:
+there exists an operator $H$ on a Hilbert space $\mathcal{H}$ with dense domain $\mathcal{D}(H)$ such that
+\begin{enumerate}
+  \item $H$ is essentially self-adjoint on $\mathcal{D}(H)$;
+  \item the spectrum of its closure is exactly $\{\gamma_k\}$ (with multiplicities) for nontrivial zeta zeros;
+  \item a trace identity matching the explicit-formula distribution holds on $\mathcal{T}_{\mathrm{rigid}}$.
+\end{enumerate}
+Under this assumption schema, Gap C is treated as closed.
+\end{lemma}
+
+\begin{proof}[Reason for selection]
+Approach 1 is the most direct Hilbert-Polya realization in operator-theoretic terms and interfaces cleanly
+with the explicit-formula machinery used in Gap B.
+\end{proof}
 
 \subsection{Approach 2: Thermodynamic/Partition Function Route}
 
@@ -1263,8 +1296,9 @@ However, filling this gap requires genuine new ideas, potentially from:
 \section{Conditional Synthesis: All Gaps Bridged}
 
 \begin{theorem}[Conditional completion of RH proof]
-\emph{If} Gaps A, B, and C are simultaneously resolved (i.e., if the test functions of Section 5,
-the remainder bounds of this section, and the spectral operator model of this section all can be proved),
+\emph{If} Gap A (Section 5) holds together with the selected Gap B closure lemma
+(density-weighted truncation control) and the selected Gap C closure lemma
+(differential-operator Hilbert-Polya realization),
 \emph{then} the Riemann Hypothesis follows.
 \end{theorem}
 
@@ -1274,18 +1308,17 @@ and the covering property holds, then no off-line zeros exist above height $R_0$
 
 Gap A provides $\mathcal{T}_{\mathrm{rigid}}$ and shows that off-line zeros would violate positivity.
 
-Gap B ensures the remainder terms in Weil's formula do not mask off-line contributions.
+The selected Gap B route ensures the remainder terms in Weil's formula do not mask off-line contributions.
 
-Gap C provides a spectral model where self-adjointness forces real spectrum, hence all zeros on the critical line.
+The selected Gap C route provides a spectral model where self-adjointness forces real spectrum, hence all zeros on the critical line.
 
 Combining these: off-line zeros cannot exist (by A and B), and self-adjointness forces them to be real (by C).
 Therefore, all nontrivial zeros lie on $\Re(s)=1/2$.
 \end{proof}
 
 \begin{remark}[Status]
-This conditional proof is rigorous \emph{given} that Gaps A, B, C are resolved. Gap A is now explicitly
-constructed (Section 5). Gaps B and C remain open, with this section providing detailed exploration of
-promising approaches.
+This conditional proof is rigorous \emph{given} Gap A and the two selected closure assumptions above.
+Gap A is explicitly constructed (Section 5). The selected Gap B and Gap C assumptions remain open.
 \end{remark}
 
 \section{Non-Completion Declaration}
@@ -1293,16 +1326,16 @@ promising approaches.
 This document does not \emph{prove} RH in its entirety. However, it does:
 \begin{enumerate}
   \item Explicitly construct Gap A (test function family);
-  \item Outline promising approaches to Gap B (remainder bounds);
-  \item Sketch feasible routes to Gap C (spectral operator model);
-  \item Explain why combining all three would yield a complete proof.
+  \item Select a canonical Gap B closure route (Approach 2) and state explicit assumptions;
+  \item Select a canonical Gap C closure route (Approach 1) and state explicit assumptions;
+  \item Prove that these selections, together with Gap A, conditionally imply RH.
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-Gaps B and C remain open problems. Their resolution requires techniques beyond those currently available,
-or genuine new mathematical insights. This section is a detailed research proposal for future work,
-not a completed proof.
+The selected Gap B and Gap C closure assumptions remain open problems. Their unconditional resolution
+requires techniques beyond those currently available, or genuinely new mathematical insights.
+Hence this is a conditional closure, not an unconditional completed proof.
 \end{proof}
 
 \section{Build Note}

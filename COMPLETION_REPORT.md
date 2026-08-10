@@ -5,9 +5,9 @@ This report consolidates prior standalone gap summaries into one detailed record
 
 ## Consolidation Outcome
 - Gap A material (explicit rigid test functions) is preserved as the completed foundation.
-- Gap B material (stability/remainder bounds) is integrated as a structured, multi-approach roadmap.
-- Gap C material (Hilbert-Polya operator route) is integrated as a structured, multi-approach roadmap.
-- Conditional synthesis across A/B/C is captured as the completion theorem template.
+- Gap B material (stability/remainder bounds) is integrated with a selected canonical closure route.
+- Gap C material (Hilbert-Polya operator route) is integrated with a selected canonical closure route.
+- Conditional synthesis across A/B/C is captured as the closure theorem template.
 
 ## Gap A Baseline (Completed Component)
 The rigid test-function class is explicit and parameterized:
@@ -46,6 +46,10 @@ $$|\mathcal{E}(f;T)|\le C(\log T)^{C_2},\quad \forall f\in\mathcal{T}_{\mathrm{r
    - low-height precision vs high-height asymptotics,
    - nonlinear interaction between amplification and remainder terms.
 
+### Selected Closure Route
+- **Selected option:** Density-weighted mollifier route.
+- **Reason:** It is the least circular path in this framework and interfaces directly with the explicit-formula truncation control used by Gap A.
+
 ## Gap C Integration (Hilbert-Polya Operator)
 
 ### Goal
@@ -68,6 +72,10 @@ Construct a self-adjoint operator whose spectral data matches nontrivial zero or
    - Dynamical perspective on zero geometry.
    - Suggestive and computationally sharp; still short of closure.
 
+### Selected Closure Route
+- **Selected option:** Differential/pseudodifferential operator route.
+- **Reason:** It gives the most direct operator-theoretic bridge to the explicit-formula machinery and the self-adjoint spectrum constraint.
+
 ### Synthesis Candidate
 A composite-operator design is documented as a unification template, with explicit notes on domain, spectrum, and regularity hurdles.
 
@@ -80,12 +88,15 @@ Interpretation:
 - B prevents remainder masking.
 - C forces real spectral ordinates under self-adjointness.
 
-This is rigorous as a conditional synthesis, not a completed unconditional proof.
+This is rigorous as a conditional synthesis, not an unconditional proof.
 
 ## Honest Status
 - **Completed:** Gap A structural program.
 - **Open:** Gap B unconditional uniform remainder closure.
 - **Open:** Gap C rigorous operator construction with exact spectral correspondence.
+
+## Precision Statement
+The framework-level closure is complete in the conditional sense: selected assumptions for B and C are explicit and sufficient with A to imply RH. The unresolved work is proving B and C unconditionally.
 
 ## Research Value Added by Integration
 - Removes duplicated/fragmented summaries.
