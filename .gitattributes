@@ -3,3 +3,10 @@
 *.glob linguist-language=Coq
 *.vo linguist-generated=true
 
+# Exclude research writeups/build artifacts from language stats.
+*.tex linguist-vendored=true
+*.pdf linguist-generated=true
+*.aux linguist-generated=true
+*.log linguist-generated=true
+*.out linguist-generated=true
+
