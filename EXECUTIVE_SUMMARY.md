@@ -161,9 +161,7 @@ $$\text{Gap A} + \text{Gap B} + \text{Gap C} \Rightarrow \text{RH PROVED}$$
 
 ### Supporting Documentation
 - **`riemann_hypothesis.pdf`**: 16-page compiled document (308 KB)
-- **`RIGID_TEST_FUNCTIONS_SUMMARY.md`**: Detailed section-by-section breakdown
-- **`QUICK_REFERENCE.md`**: Formula guide, algorithm pseudocode, complexity analysis
-- **`IMPLEMENTATION_COMPLETE.md`**: Executive summary and next steps
+- **`COMPLETION_REPORT.md`**: Detailed project summary and analysis
 
 ---
 
@@ -212,9 +210,8 @@ This work transforms Gap A from an abstract mathematical obstacle into a well-sp
 KernelCert/
 ├── riemann_hypothesis.tex              [MODIFIED: 974 lines, expanded]
 ├── riemann_hypothesis.pdf              [GENERATED: 16 pages, 308 KB]
-├── RIGID_TEST_FUNCTIONS_SUMMARY.md     [NEW: 8.2 KB]
-├── QUICK_REFERENCE.md                  [NEW: 6.3 KB]
-└── IMPLEMENTATION_COMPLETE.md          [NEW: Executive summary]
+├── EXECUTIVE_SUMMARY.md                [NEW: Overview]
+└── COMPLETION_REPORT.md                [NEW: Detailed report]
 ```
 
 ---
