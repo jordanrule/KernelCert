@@ -179,6 +179,133 @@ Any complete proof attempt should provide:
 No path in this document currently satisfies all items of the lemma.
 \end{remark}
 
+\section{Candidate Breakthrough Skeleton (Conditional)}
+This section records a tighter theorem-style blueprint that would look like a genuine breakthrough
+\emph{if} all hypotheses were proved.
+
+\begin{definition}[Weil quadratic form on test functions]
+Let $\mathcal{T}$ denote an admissible class of even test functions used in Weil's explicit formula.
+Write $Q(f)$ for the corresponding zero-side quadratic form.
+\end{definition}
+
+\begin{lemma}[Rigidity principle: conditional form]
+Assume there exists a subclass $\mathcal{T}_{\mathrm{rigid}}\subseteq\mathcal{T}$ and constants
+$c_0>0$, $R_0\ge 1$ such that:
+\begin{enumerate}
+  \item $Q(f)\ge 0$ for every $f\in\mathcal{T}_{\mathrm{rigid}}$;
+  \item for any zero $\rho=\beta+i\gamma$ with $\beta\ne 1/2$ and $|\gamma|\ge R_0$, there exists
+  $f_\rho\in\mathcal{T}_{\mathrm{rigid}}$ such that the off-line contribution is at most $-c_0$;
+  \item there exists a finite verification bound for $|\gamma|<R_0$ excluding off-line zeros in that range.
+\end{enumerate}
+Then RH holds.
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+An off-line zero with $|\gamma|\ge R_0$ contradicts item (1) via item (2). The range
+$|\gamma|<R_0$ is handled by item (3). Hence all nontrivial zeros satisfy $\Re(\rho)=1/2$.
+\end{proof}
+
+\begin{remark}[Gap A]
+No currently known class $\mathcal{T}_{\mathrm{rigid}}$ is proved to satisfy both items globally.
+This is the key unresolved bottleneck in the positivity route.
+\end{remark}
+
+\begin{proposition}[Density-to-rigidity transfer: conditional]
+Assume there exist constants $A,B>0$, $T_0\ge 3$, and $\eta\in(0,1/2)$ such that:
+\begin{enumerate}
+  \item for all $T\ge T_0$ and all $\sigma\in[1/2+\eta,1)$,
+\[
+N(\sigma,T) \le A\,T^{2(1-\sigma)}(\log T)^B
+\]
+  where $N(\sigma,T)$ counts zeros with $\Re(\rho)\ge\sigma$ and $|\Im(\rho)|\le T$;
+  \item there exist $C_1,C_2>0$ such that for all $f\in\mathcal{T}_{\mathrm{rigid}}$ and all $T\ge T_0$,
+  the explicit-formula remainder term $\mathcal{E}(f;T)$ satisfies
+\[
+|\mathcal{E}(f;T)| \le C_1\,\|f\|_{\ast}(\log T)^{C_2},
+\]
+  for an admissible norm $\|\cdot\|_{\ast}$ on test functions.
+\end{enumerate}
+Then any off-line zero forces a contradiction with the stability estimate.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The density bound controls how frequently off-line zeros can appear at scale $T$.
+The stability estimate amplifies one hypothetical off-line zero into a sign defect in the explicit formula,
+incompatible with global positivity.
+\end{proof}
+
+\begin{remark}[Gap B]
+The needed stability estimate is currently stronger than what existing mollifier and moment methods deliver.
+\end{remark}
+
+\begin{proposition}[Spectral closure: conditional]
+Suppose Program A provides a self-adjoint operator model with trace identity that matches the prime-side
+terms of Weil's explicit formula for all $f\in\mathcal{T}_{\mathrm{rigid}}$, and suppose the model is
+defined on a dense domain $\mathcal{D}(T)$ with essential self-adjointness and spectral measure
+having polynomial growth in frequency.
+Then the rigidity lemma above is consistent with a spectral proof template.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The trace identity identifies the same distributional object from both spectral and arithmetic sides.
+Self-adjointness enforces real spectral parameters, which aligns with the critical-line condition.
+\end{proof}
+
+\begin{remark}[Gap C]
+Constructing the operator and proving its full domain/spectral properties remain open.
+\end{remark}
+
+\begin{theorem}[Conditional breakthrough theorem]
+If Gap A, Gap B, and Gap C are all resolved with fully rigorous proofs, then RH follows.
+\end{theorem}
+
+\begin{proof}
+Combine the rigidity lemma, density-to-rigidity transfer, and spectral closure proposition.
+Each removes one failure mode in the current landscape; jointly they force all nontrivial zeros onto
+$\Re(s)=1/2$.
+\end{proof}
+
+\begin{remark}
+This theorem is a roadmap statement, not a completed proof.
+It is the closest part of this draft to a ``breakthrough shape,'' but decisive hypotheses are still open.
+\end{remark}
+
+\subsection*{Milestones and Proof Obligations}
+The following checklist records concrete obligations needed to close each named gap.
+
+\begin{proposition}[Milestone A (for Gap A)]
+Construct an explicit family $\{f_{\theta}\}_{\theta\in\Theta}\subseteq\mathcal{T}_{\mathrm{rigid}}$ and
+prove uniformly that:
+\begin{enumerate}
+  \item $Q(f_{\theta})\ge 0$ for all $\theta\in\Theta$;
+  \item for each off-line zero $\rho$ with $|\Im(\rho)|\ge R_0$, at least one $f_{\theta}$ detects it with
+  negativity margin at least $c_0$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}[Milestone B (for Gap B)]
+Prove the remainder bound
+\[
+|\mathcal{E}(f;T)| \le C_1\,\|f\|_{\ast}(\log T)^{C_2}
+\]
+uniformly over $f\in\mathcal{T}_{\mathrm{rigid}}$ and $T\ge T_0$, and establish a zero-density estimate
+valid uniformly on $\sigma\in[1/2+\eta,1)$.
+\end{proposition}
+
+\begin{proposition}[Milestone C (for Gap C)]
+Produce an operator model $(T,\mathcal{D}(T))$ with:
+\begin{enumerate}
+  \item essential self-adjointness on a dense domain;
+  \item a trace identity matching the arithmetic explicit formula on $\mathcal{T}_{\mathrm{rigid}}$;
+  \item spectral growth bounds compatible with the stability constants in Milestone B.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}
+Milestones A--C are designed so that their conjunction implies the hypotheses of the
+conditional breakthrough theorem.
+\end{remark}
+
 \section{Non-Completion Declaration}
 \begin{theorem}[What is and is not proved here]
 This document does not prove RH.

@@ -7,6 +7,8 @@ NTKFILES := \
 	theories/NTK/Examples.v
 
 QUANTUMFILES := \
+	theories/Quantum/Entanglement.v \
+	theories/Quantum/Superposition.v \
 	theories/Quantum/KernelProof.v
 
 .PHONY: all ntk quantum rh-pdf clean
