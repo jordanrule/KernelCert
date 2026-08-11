@@ -100,44 +100,19 @@ make clean
 ```
 
 
-## Quantum Machine Learning Compiler
+## Quantum Neural Tangent Kernel (QNTK)
 
-This section introduces a formalization of quantum machine learning concepts, focusing on the physical principles of superposition and entanglement. The goal is to provide a rigorous foundation for quantum compilers and quantum-kernel reasoning in the context of machine learning.
+This section introduces a formalization of quantum neural tangent kernel concepts, focusing on the physical principles of superposition and entanglement. The goal is to provide a rigorous foundation for quantum-kernel reasoning in the context of machine learning.
 
 ### What is formalized here?
 
-1. **Superposition**: The ability of a quantum system to exist in multiple states simultaneously. This is represented mathematically as a linear combination of basis states.
-2. **Entanglement**: A quantum phenomenon where the state of one particle is dependent on the state of another, no matter the distance between them. This is formalized using tensor products and entangled state vectors.
-3. **Quantum Circuit Compilation**: The process of translating high-level quantum algorithms into low-level gate operations, ensuring correctness and optimization.
-4. **Fault Tolerance of Quantum Circuits**: A compact formal statement showing that a kernel estimate remains bounded under a small circuit error rate.
-5. **Scalability to Large Quantum Systems**: A simple linear-growth argument showing that a kernel estimate scales predictably with increased system size.
-
-### Theory and practice
-
-#### Theory
-
-Quantum machine learning leverages the principles of quantum mechanics to process information in fundamentally new ways. Key theoretical aspects include:
-
-- **Hilbert Spaces**: The mathematical framework for quantum states.
-- **Unitary Transformations**: Operations that preserve the norm of quantum states.
-- **Measurement**: The process of extracting classical information from a quantum system.
-
-#### Practice
-
-In practice, quantum compilers must:
-
-- Optimize gate sequences to minimize error rates.
-- Ensure that compiled circuits respect hardware constraints.
-- Verify the correctness of transformations using formal proofs.
+1. **Fault Tolerance**: A compact formal statement showing that a QNTK estimate remains bounded under a small circuit error rate.
+2. **Scalability to Large Quantum Systems**: A simple linear-growth argument showing that a QNTK estimate scales predictably with increased system size.
 
 ### File layout
 
-- `theories/Quantum/Superposition.v`:
-  formalization of superposition principles and their mathematical representation.
-- `theories/Quantum/Entanglement.v`:
-  proofs and examples of entangled states and their properties.
 - `theories/Quantum/KernelProof.v`:
-  a compact proof layer for fault tolerance and scalability properties of a quantum ML kernel estimate, including a basic formalization of those two design goals.
+  a compact proof layer for fault tolerance and scalability properties of a quantum neural tangent kernel estimate, including a basic formalization of those two design goals.
 
 ### Build
 
