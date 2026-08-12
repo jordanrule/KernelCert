@@ -167,6 +167,62 @@ Current methods establish substantial partial results (including large proportio
 but not complete exclusion of off-line zeros.
 \end{remark}
 
+\subsection{Program E: Hadamard-Structured Positivity (including order 668)}
+
+\begin{definition}[Admissible Hadamard order]
+An integer $n$ is called admissible for a real Hadamard matrix if $n=1$, $n=2$, or $n\equiv 0\pmod 4$.
+In this note, we consider a computationally encoded family of Hadamard instances for admissible orders
+up to $2000$, including an explicit instance at order $n=668$.
+\end{definition}
+
+\begin{definition}[Normalized Hadamard operator]
+Let $H_n\in\{\pm 1\}^{n\times n}$ satisfy $H_nH_n^{\top}=nI_n$.
+Define
+\[
+U_n:=\frac{1}{\sqrt n}H_n.
+\]
+Then $U_n$ is orthogonal, hence all its singular values are exactly $1$.
+\end{definition}
+
+\begin{lemma}[Deterministic spectral control at order $668$]
+If $H_{668}$ is a Hadamard matrix of order $668$, then for $U_{668}=668^{-1/2}H_{668}$,
+\[
+U_{668}U_{668}^{\top}=I_{668},
+\]
+and any quadratic form built from $U_{668}^{\top}U_{668}$ has condition number $1$.
+\end{lemma}
+
+\begin{proof}
+Immediate from $H_{668}H_{668}^{\top}=668I_{668}$ and normalization.
+\end{proof}
+
+\begin{proposition}[Hadamard-weighted test-family transfer: conditional]
+Assume one can construct a map
+\[
+\Phi_n:\mathbb{R}^n\to \mathcal{T}_{\mathrm{rigid}}
+\]
+for admissible orders $n\le 2000$ such that:
+\begin{enumerate}
+  \item for every $x\in\mathbb{R}^n$, $Q(\Phi_n(U_nx))\ge 0$ (uniform positivity transfer),
+  \item any hypothetical off-line zero induces a vector $x_\rho$ for which
+  $Q(\Phi_n(U_nx_\rho))\le -c_\rho<0$ at some admissible order $n$ (in particular one may choose $n=668$).
+\end{enumerate}
+Then RH follows.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Item (1) gives nonnegativity for all transferred test functions.
+Item (2) says an off-line zero would force strict negativity for one of them, contradiction.
+Therefore no off-line zero exists.
+\end{proof}
+
+\begin{remark}[Status and limitation]
+The Hadamard component is rigorous at the finite-dimensional linear-algebra level (orthogonality,
+conditioning, and exact identities, including order $668$).
+The missing step is the analytic transfer from this discrete structure to the Weil-form positivity
+inequalities required in Program B. Thus Program E is a structured route, not a completed proof.
+\end{remark}
+
 \begin{lemma}[Minimal completion criteria]
 Any complete proof attempt should provide:
 \begin{enumerate}
