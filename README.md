@@ -102,17 +102,26 @@ make clean
 
 ## Quantum Neural Tangent Kernel (QNTK)
 
-This section introduces a formalization of quantum neural tangent kernel concepts, focusing on the physical principles of superposition and entanglement. The goal is to provide a rigorous foundation for quantum-kernel reasoning in the context of machine learning.
+This section introduces a compact, assumption-explicit formalization of quantum neural tangent kernel concepts. The structure now mirrors common QNTK literature flow: state primitives (superposition/entanglement), then derived kernel properties (noise robustness and scaling).
 
 ### What is formalized here?
 
-1. **Fault Tolerance**: A compact formal statement showing that a QNTK estimate remains bounded under a small circuit error rate.
-2. **Scalability to Large Quantum Systems**: A simple linear-growth argument showing that a QNTK estimate scales predictably with increased system size.
+1. **Fault Tolerance (non-vacuous bound)**: for nonnegative ideal signal and error rate in `[0,1]`, the noisy QNTK estimate is proved to stay between `0` and the ideal value.
+2. **Scalability (linear and monotone)**: the size-indexed QNTK surrogate is linear in system size, monotone under nonnegative per-qubit contribution, and has a one-step increment law.
+3. **Compositional quantum gains**: superposition and entanglement gains are represented explicitly as abstract nonnegative contributions used in a derived effective QNTK estimate.
 
 ### File layout
 
 - `theories/Quantum/KernelProof.v`:
-  a compact proof layer for fault tolerance and scalability properties of a quantum neural tangent kernel estimate, including a basic formalization of those two design goals.
+  assumption-explicit QNTK proof layer with:
+  - multiplicative noise attenuation model,
+  - formal lower/upper noise bound,
+  - linear and monotone size scaling lemmas,
+  - effective estimate construction from base + superposition + entanglement gains.
+- `theories/Quantum/Superposition.v`:
+  minimal linear-combination state model used as a superposition-side primitive.
+- `theories/Quantum/Entanglement.v`:
+  minimal entanglement-side primitives and a nonnegativity result for a size-indexed interaction-strength surrogate.
 
 ### Build
 
