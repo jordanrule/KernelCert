@@ -1,12 +1,12 @@
 # KernelCert
 
-`KernelCert` is a small, demonstrative Coq formalization of three kernel-oriented proof tracks: an NTK, a quantum neural tangent kernel surrogate, and a zeta-kernel scaffold linked to the Riemann program. The common thread is formal verification of kernel structure together with an explicit asymptotic property: infinite-width convergence, large-system scaling, or harmonic decay. The repository is intentionally small, but its layout leaves room for more kernel families in the future.
+`KernelCert` is a small Coq project built around three kernel-oriented proof tracks: a classical NTK, a quantum neural tangent kernel surrogate, and a zeta-kernel scaffold connected to the Riemann program. The basic idea is simple: show that important kernel facts can be checked formally, while also recording one asymptotic theme in each track. Those themes are infinite-width convergence, large-system scaling, and harmonic decay. The repository is intentionally small, but the structure leaves room for more kernel families in the future.
 
 At a glance:
 
-- **NTK**: a finite-feature kernel with an infinite-width convergence theorem and a training-time constancy theorem.
-- **Quantum**: a QNTK surrogate with scalable and fault-tolerant large-system behavior.
-- **Riemann/Zeta Kernel**: a harmonic kernel scaffold with symmetry, positive semidefiniteness, and decaying zeta-style features.
+- **NTK**: a simple finite-feature kernel with an infinite-width convergence theorem and a training-time constancy theorem.
+- **Quantum**: a QNTK-style model that remains scalable and fault-tolerant as the system grows.
+- **Riemann/Zeta Kernel**: a harmonic kernel scaffold with symmetry, positive semidefiniteness, and zeta-style features that shrink as the index grows.
 
 ## Neural Tangent Kernel (NTK)
 
@@ -148,18 +148,18 @@ This project remains a pedagogical artifact focused on foundational principles, 
 
 ## Riemann Hypothesis / Zeta Kernel
 
-This section replaces the earlier gap-based scaffold with a zeta-kernel scaffold. It does **not** claim an unconditional proof of RH. Instead, it formalizes a symmetric, positive semidefinite kernel induced by a harmonic feature map `1/(n+1)`. The goal is to make a small but honest step toward RH-oriented formal analysis: a countable kernel family with explicit decay and a finite quadratic form that is machine-checkable in Coq.
+This section replaces the earlier gap-based scaffold with a zeta-kernel scaffold. It does **not** claim an unconditional proof of RH. Instead, it formalizes a symmetric, positive semidefinite kernel built from the harmonic feature map `1/(n+1)`. The aim is modest but honest: add a countable kernel family with explicit decay and a finite quadratic form that Coq can check.
 
 ### What is formalized here?
 
-1. The zeta feature map is positive and decays with index.
+1. The zeta feature map is positive and gets smaller as the index grows.
 2. The induced zeta kernel is symmetric.
 3. Finite Gram quadratic forms for the zeta kernel are nonnegative.
-4. The construction is positioned as a scaffold for future RH work rather than an unconditional proof.
+4. The construction is a scaffold for future RH work, not an unconditional proof.
 
 ### Why does this matter?
 
-A fully formal proof of the Riemann Hypothesis would sharpen a number of estimates in analytic number theory. That could indirectly affect security engineering in places that rely on prime-distribution heuristics, zero-free-region assumptions, or number-theoretic cost models. It would not by itself imply an immediate break of modern public-key cryptography, but it could tighten the analysis around systems that depend on such estimates.
+A fully formal proof of the Riemann Hypothesis would sharpen a number of estimates in analytic number theory. In practical terms, that could strengthen the scientific foundations of work that uses prime-distribution heuristics, zero-free-region assumptions, or number-theoretic cost models. It would not by itself imply an immediate break of modern public-key cryptography. The more realistic effect is better understanding of where some security assumptions are strong, where they are fragile, and where existing cryptosystems are unaffected.
 
 ### File layout
 
