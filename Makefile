@@ -12,7 +12,7 @@ QUANTUMFILES := \
 	theories/Quantum/KernelProof.v
 
 RIEMANNFILES := \
-	theories/Riemann/Roadmap.v
+	theories/Riemann/Zeta.v
 
 .PHONY: all ntk quantum riemann rh-pdf clean
 

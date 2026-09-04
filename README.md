@@ -1,6 +1,12 @@
 # KernelCert
 
-`KernelCert` is a small, demonstrative Coq formalization of a Neural Tangent Kernel (NTK) and related concepts. This repository is part of a continuing series exploring formal proofs in machine learning and quantum computing. Each section is self-contained and focuses on a specific topic.
+`KernelCert` is a small, demonstrative Coq formalization of three kernel-oriented proof tracks: an NTK, a quantum neural tangent kernel surrogate, and a zeta-kernel scaffold linked to the Riemann program. The common thread is formal verification of kernel structure together with an explicit asymptotic property: infinite-width convergence, large-system scaling, or harmonic decay. The repository is intentionally small, but its layout leaves room for more kernel families in the future.
+
+At a glance:
+
+- **NTK**: a finite-feature kernel with an infinite-width convergence theorem and a training-time constancy theorem.
+- **Quantum**: a QNTK surrogate with scalable and fault-tolerant large-system behavior.
+- **Riemann/Zeta Kernel**: a harmonic kernel scaffold with symmetry, positive semidefiniteness, and decaying zeta-style features.
 
 ## Neural Tangent Kernel (NTK)
 
@@ -102,7 +108,7 @@ make clean
 
 ## Quantum Neural Tangent Kernel (QNTK)
 
-This section introduces a compact, assumption-explicit formalization of quantum neural tangent kernel concepts. The structure now mirrors common QNTK literature flow: state primitives (superposition/entanglement), then derived kernel properties (noise robustness and scaling).
+This section introduces a compact, assumption-explicit formalization of quantum neural tangent kernel concepts. The structure now mirrors common QNTK literature flow: state primitives (superposition/entanglement), then derived kernel properties (noise robustness and scaling). The large-system scaling lemmas play the same asymptotic role that infinite-width limits play in the classical NTK track.
 
 ### What is formalized here?
 
@@ -140,38 +146,33 @@ make clean
 
 This project remains a pedagogical artifact focused on foundational principles, compiler-style formalization, and basic quantum-kernel reasoning rather than a complete production-grade quantum machine learning stack.
 
-## Riemann Hypothesis Roadmap
+## Riemann Hypothesis / Zeta Kernel
 
-This section documents a formal, machine-checkable roadmap around the Riemann Hypothesis (RH).
-It does **not** claim an unconditional proof of RH. Instead, it encodes a conditional closure structure:
-
-1. Gap A (rigid test-function framework) is represented as a closed component in the roadmap logic.
-2. Gap B (uniform stability/remainder bounds) is represented as an explicit assumption.
-3. Gap C (Hilbert-Polya style spectral/operator closure) is represented as an explicit assumption.
-4. From A+B+C, the final RH target is derived conditionally.
+This section replaces the earlier gap-based scaffold with a zeta-kernel scaffold. It does **not** claim an unconditional proof of RH. Instead, it formalizes a symmetric, positive semidefinite kernel induced by a harmonic feature map `1/(n+1)`. The goal is to make a small but honest step toward RH-oriented formal analysis: a countable kernel family with explicit decay and a finite quadratic form that is machine-checkable in Coq.
 
 ### What is formalized here?
 
-- A Coq module that defines abstract closure assumptions for the three-gap pipeline.
-- A machine-checked theorem that packages the dependency graph:
-  
-  > Gap A + Gap B + Gap C -> RH
+1. The zeta feature map is positive and decays with index.
+2. The induced zeta kernel is symmetric.
+3. Finite Gram quadratic forms for the zeta kernel are nonnegative.
+4. The construction is positioned as a scaffold for future RH work rather than an unconditional proof.
 
-- A bundled theorem form suitable for CI checks and incremental formalization.
+### Why does this matter?
+
+A fully formal proof of the Riemann Hypothesis would sharpen a number of estimates in analytic number theory. That could indirectly affect security engineering in places that rely on prime-distribution heuristics, zero-free-region assumptions, or number-theoretic cost models. It would not by itself imply an immediate break of modern public-key cryptography, but it could tighten the analysis around systems that depend on such estimates.
 
 ### File layout
 
-- `theories/Riemann/Roadmap.v`:
-  machine-checkable logical skeleton for conditional RH closure, including:
-  - abstract assumptions for Gap A/B/C,
-  - intermediate propositions (`NoOffLineZeros`, `SpectralReality`),
-  - final conditional theorem `conditional_rh_closure`.
-- `riemann_hypothesis.tex`:
-  mathematical draft detailing the theorem/lemma roadmap and open obligations.
+- `theories/Riemann/Zeta.v`:
+  the Zeta Kernel development, including:
+  - the harmonic feature map `zeta_feature`,
+  - symmetry of `zeta_kernel`,
+  - positive semidefiniteness of the finite quadratic form,
+  - decay of the feature map for large indices.
 
 ### Build
 
-If Coq is installed, build the roadmap target with:
+If Coq is installed, build the Zeta Kernel target with:
 
 ```sh
 make riemann
@@ -183,10 +184,10 @@ To build all Coq targets currently wired in the Makefile:
 make all
 ```
 
-To compile the RH draft document (requires `pdflatex`):
+To clean generated Coq artifacts:
 
 ```sh
-make rh-pdf
+make clean
 ```
 
 ## License
