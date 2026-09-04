@@ -1,5 +1,7 @@
 # KernelCert
 
+Mission: to enable scientific progress without breaking cryptosystems, by formalizing kernel structure and asymptotic behavior in Coq.
+
 `KernelCert` is a small Coq project built around three kernel-oriented proof tracks: a classical NTK, a quantum neural tangent kernel surrogate, and a zeta-kernel scaffold connected to the Riemann program. The basic idea is simple: show that important kernel facts can be checked formally, while also recording one asymptotic theme in each track. Those themes are infinite-width convergence, large-system scaling, and harmonic decay. The repository is intentionally small, but the structure leaves room for more kernel families in the future.
 
 At a glance:
